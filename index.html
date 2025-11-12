@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPT CSE Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0"
+      }
+    }
+    </script>
+    <style>
+      :root {
+        --bg-primary: #111827;
+        --bg-secondary: #1f2937;
+        --bg-tertiary: #374151;
+        --bg-backdrop: rgba(17, 24, 39, 0.8);
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-muted: #6b7280;
+        --accent: #22d3ee;
+        --accent-hover: #06b6d4;
+        --border-color: #4b5563;
+        --shadow-color: rgba(34, 211, 238, 0.2);
+        font-family: 'Poppins', 'Inter', sans-serif;
+      }
+      .theme-white {
+        --bg-primary: #f9fafb;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #f3f4f6;
+        --bg-backdrop: rgba(255, 255, 255, 0.8);
+        --text-primary: #111827;
+        --text-secondary: #374151;
+        --text-muted: #9ca3af;
+        --accent: #0891b2;
+        --accent-hover: #06b6d4;
+        --border-color: #d1d5db;
+        --shadow-color: rgba(8, 145, 178, 0.2);
+      }
+      .theme-pink {
+        --bg-primary: #fff1f2;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #ffe4e6;
+        --bg-backdrop: rgba(255, 241, 242, 0.8);
+        --text-primary: #831843;
+        --text-secondary: #be185d;
+        --text-muted: #db2777;
+        --accent: #ec4899;
+        --accent-hover: #db2777;
+        --border-color: #f9a8d4;
+        --shadow-color: rgba(236, 72, 153, 0.2);
+      }
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
