@@ -31,15 +31,7 @@ const App: React.FC = () => {
         return sessionStorage.getItem('isAdmin') === 'true';
     });
 
-    const [students, setStudents] = useState<Student[]>(() => {
-        try {
-            const storedStudents = localStorage.getItem('students');
-            return storedStudents ? JSON.parse(storedStudents) : initialStudents;
-        } catch (error) {
-            console.error('Error parsing students from localStorage', error);
-            return initialStudents;
-        }
-    });
+    const [students, setStudents] = useState<Student[]>(initialStudents);
 
     const [theme, setTheme] = useState<Theme>(() => {
         return (localStorage.getItem('theme') as Theme) || 'black';
@@ -49,10 +41,6 @@ const App: React.FC = () => {
         document.documentElement.className = `theme-${theme}`;
         localStorage.setItem('theme', theme);
     }, [theme]);
-
-    useEffect(() => {
-        localStorage.setItem('students', JSON.stringify(students));
-    }, [students]);
     
     useEffect(() => {
         sessionStorage.setItem('isAdmin', String(isAdmin));
