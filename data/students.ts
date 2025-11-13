@@ -811,7 +811,7 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'SHIVANI',
+        name: 'S SHIVANI',
         register_number: '124CS23045',
         avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
         projects: [
