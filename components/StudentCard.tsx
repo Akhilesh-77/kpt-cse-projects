@@ -7,6 +7,8 @@ interface StudentCardProps {
 }
 
 const StudentCard: React.FC<StudentCardProps> = ({ student, onSelect }) => {
+    const projectCount = new Set(student.projects.filter(p => p.link).map(p => p.link)).size;
+
     return (
         <div
             onClick={() => onSelect(student)}
@@ -22,6 +24,7 @@ const StudentCard: React.FC<StudentCardProps> = ({ student, onSelect }) => {
             <div className="p-4">
                 <h3 className="text-lg font-semibold text-[var(--text-primary)] truncate">{student.name}</h3>
                 <p className="text-sm text-[var(--accent)] font-mono">{student.register_number}</p>
+                <p className="text-sm text-[var(--text-muted)] mt-1">{projectCount} {projectCount === 1 ? 'Project' : 'Projects'}</p>
             </div>
         </div>
     );

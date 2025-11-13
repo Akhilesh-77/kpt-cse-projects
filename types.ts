@@ -13,4 +13,4 @@ export interface Student {
 
 export type Theme = 'black' | 'white' | 'pink';
 
-export type SortOption = 'name-asc' | 'name-desc' | 'reg-asc' | 'reg-desc' | 'latest-asc';
+export type SortOption = 'name-asc' | 'name-desc' | 'reg-asc' | 'reg-desc' | 'latest-asc' | 'projects-desc';

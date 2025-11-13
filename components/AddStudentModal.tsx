@@ -29,9 +29,14 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({ isOpen, onClose, onAd
         }
     }, [isOpen]);
 
+    // FIX: Use immutable update pattern to prevent direct state mutation.
     const handleProjectChange = (index: number, field: keyof Project, value: string) => {
-        const newProjects = [...projects];
-        newProjects[index][field] = value;
+        const newProjects = projects.map((project, i) => {
+            if (i === index) {
+                return { ...project, [field]: value };
+            }
+            return project;
+        });
         setProjects(newProjects);
     };
 
@@ -130,7 +135,8 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({ isOpen, onClose, onAd
                                 </div>
                                 <div>
                                     <label className="font-semibold">Project Description</label>
-                                    <textarea value={project.description} onChange={e => handleProjectChange(index, 'description', e.target.value)} className={inputClasses} rows={2}></textarea>
+                                    {/* FIX: Ensure value is not undefined to avoid uncontrolled component warning. */}
+                                    <textarea value={project.description || ''} onChange={e => handleProjectChange(index, 'description', e.target.value)} className={inputClasses} rows={2}></textarea>
                                 </div>
                             </div>
                         ))}

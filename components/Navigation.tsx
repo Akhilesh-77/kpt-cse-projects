@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Tab = 'home' | 'cohort-owners' | 'credits';
+type Tab = 'home' | 'projects' | 'cohort-owners' | 'credits';
 
 interface NavigationProps {
     activeTab: Tab;
@@ -15,13 +15,20 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
     return (
         <nav className="bg-[var(--bg-secondary)] border-b-2 border-[var(--border-color)]">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                <div className="flex items-center justify-center space-x-4">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                     <button 
                         onClick={() => onTabChange('home')}
                         className={`${navButtonClasses} ${activeTab === 'home' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'home'}
                     >
                         Home
+                    </button>
+                    <button 
+                        onClick={() => onTabChange('projects')}
+                        className={`${navButtonClasses} ${activeTab === 'projects' ? activeClasses : inactiveClasses}`}
+                        aria-pressed={activeTab === 'projects'}
+                    >
+                        Projects
                     </button>
                     <button 
                         onClick={() => onTabChange('cohort-owners')}

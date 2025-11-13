@@ -16,6 +16,7 @@ const sortOptions: { label: string; value: SortOption }[] = [
     { label: 'Latest Upload', value: 'latest-asc' },
     { label: 'Name (Ascending)', value: 'name-asc' },
     { label: 'Reg No. (Ascending)', value: 'reg-asc' },
+    { label: 'Projects (High-Low)', value: 'projects-desc' },
 ];
 
 const SortControl: React.FC<SortControlProps> = ({ sortOption, setSortOption }) => {

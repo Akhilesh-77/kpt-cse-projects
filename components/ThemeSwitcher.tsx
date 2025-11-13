@@ -25,7 +25,8 @@ const SparklesIcon = () => (
     </svg>
 );
 
-const themes: { name: Theme; icon: JSX.Element }[] = [
+// FIX: Use React.ReactElement to avoid issues with the global JSX namespace.
+const themes: { name: Theme; icon: React.ReactElement }[] = [
     { name: 'black', icon: <MoonIcon /> },
     { name: 'white', icon: <SunIcon /> },
     { name: 'pink', icon: <SparklesIcon /> },

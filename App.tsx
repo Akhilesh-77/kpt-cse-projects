@@ -14,17 +14,18 @@ import SortControl from './components/SortControl';
 import Navigation from './components/Navigation';
 import FacultySection from './components/FacultySection';
 import CreditsSection from './components/CreditsSection';
+import ProjectsSection from './components/ProjectsSection';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [sortOption, setSortOption] = useState<SortOption>('latest-asc');
+    const [sortOption, setSortOption] = useState<SortOption>('name-asc');
     const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
     const [studentToEdit, setStudentToEdit] = useState<Student | null>(null);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [activeTab, setActiveTab] = useState<'home' | 'cohort-owners' | 'credits'>('home');
+    const [activeTab, setActiveTab] = useState<'home' | 'projects' | 'cohort-owners' | 'credits'>('home');
 
     const [isAdmin, setIsAdmin] = useState<boolean>(() => {
         return sessionStorage.getItem('isAdmin') === 'true';
@@ -68,7 +69,17 @@ const App: React.FC = () => {
         }
 
         if (sortOption === 'latest-asc') {
-            return filtered;
+            // Even though 'name-asc' is default, keep this logic in case user selects it
+            const reversed = [...filtered].reverse();
+            return reversed;
+        }
+
+        if (sortOption === 'projects-desc') {
+            return [...filtered].sort((a, b) => {
+                const countA = new Set(a.projects.filter(p => p.link).map(p => p.link)).size;
+                const countB = new Set(b.projects.filter(p => p.link).map(p => p.link)).size;
+                return countB - countA;
+            });
         }
 
         const [sortBy, sortOrder] = sortOption.split('-');
@@ -203,6 +214,8 @@ const App: React.FC = () => {
                     )}
                 </main>
             )}
+
+            {activeTab === 'projects' && <ProjectsSection students={students} />}
 
             {activeTab === 'cohort-owners' && <FacultySection />}
 
