@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme } from '../App';
+import { Theme } from '../types';
 import ActionMenu from './ActionMenu';
 import ThemeSwitcher from './ThemeSwitcher';
 

@@ -10,7 +10,7 @@ const StudentCard: React.FC<StudentCardProps> = ({ student, onSelect }) => {
     return (
         <div
             onClick={() => onSelect(student)}
-            className="bg-[var(--bg-secondary)] rounded-lg shadow-lg overflow-hidden cursor-pointer group transform transition-all duration-300 hover:scale-105"
+            className="bg-[var(--bg-secondary)] rounded-lg shadow-lg overflow-hidden cursor-pointer group transform transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-[var(--accent)]"
             // FIX: Cast style object to React.CSSProperties to allow custom CSS properties.
             style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)' } as React.CSSProperties}
         >

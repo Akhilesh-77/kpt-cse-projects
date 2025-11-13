@@ -1,6 +1,6 @@
-// FIX: Add React import to resolve JSX namespace.
+// FIX: Import React to make the JSX namespace available for JSX syntax and types.
 import React from 'react';
-import { Theme } from '../App';
+import { Theme } from '../types';
 
 interface ThemeSwitcherProps {
     currentTheme: Theme;

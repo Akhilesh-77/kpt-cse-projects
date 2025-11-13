@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Student } from './types';
+import { Student, Theme, SortOption } from './types';
 import { students as initialStudents } from './data/students';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
@@ -10,19 +10,21 @@ import EditStudentModal from './components/EditStudentModal';
 import Toast from './components/Toast';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import AdminLoginModal from './components/AdminLoginModal';
-import SortControl, { SortOption } from './components/SortControl';
-
-export type Theme = 'black' | 'white' | 'pink';
+import SortControl from './components/SortControl';
+import Navigation from './components/Navigation';
+import FacultySection from './components/FacultySection';
+import CreditsSection from './components/CreditsSection';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [sortOption, setSortOption] = useState<SortOption>('name-asc');
+    const [sortOption, setSortOption] = useState<SortOption>('latest-asc');
     const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
     const [studentToEdit, setStudentToEdit] = useState<Student | null>(null);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [activeTab, setActiveTab] = useState<'home' | 'cohort-owners' | 'credits'>('home');
 
     const [isAdmin, setIsAdmin] = useState<boolean>(() => {
         return sessionStorage.getItem('isAdmin') === 'true';
@@ -63,6 +65,10 @@ const App: React.FC = () => {
                 student.name.toLowerCase().includes(query) ||
                 student.register_number.toLowerCase().includes(query)
             );
+        }
+
+        if (sortOption === 'latest-asc') {
+            return filtered;
         }
 
         const [sortBy, sortOrder] = sortOption.split('-');
@@ -172,29 +178,37 @@ const App: React.FC = () => {
                 onExportClick={handleExport}
                 onImportClick={triggerImport}
             />
-            <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mb-8">
-                    <SearchBar 
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Search by name or register number..."
-                    />
-                    <SortControl sortOption={sortOption} setSortOption={setSortOption} />
-                </div>
-
-                {students.length > 0 ? (
-                    <StudentGrid students={sortedAndFilteredStudents} onSelectStudent={setSelectedStudent} />
-                ) : (
-                    <div className="text-center py-16">
-                        <h2 className="text-2xl font-semibold text-[var(--text-secondary)]">No Students Found</h2>
-                        <p className="text-[var(--text-muted)] mt-2">
-                            {isAdmin ? "Click the '+' button to add the first student!" : "Contact an admin to add student data."}
-                        </p>
+            <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+            
+            {activeTab === 'home' && (
+                <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mb-8">
+                        <SearchBar 
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Search by name or register number..."
+                        />
+                        <SortControl sortOption={sortOption} setSortOption={setSortOption} />
                     </div>
-                )}
-            </main>
 
-            {isAdmin && (
+                    {students.length > 0 ? (
+                        <StudentGrid students={sortedAndFilteredStudents} onSelectStudent={setSelectedStudent} />
+                    ) : (
+                        <div className="text-center py-16">
+                            <h2 className="text-2xl font-semibold text-[var(--text-secondary)]">No Students Found</h2>
+                            <p className="text-[var(--text-muted)] mt-2">
+                                {isAdmin ? "Click the '+' button to add the first student!" : "Contact an admin to add student data."}
+                            </p>
+                        </div>
+                    )}
+                </main>
+            )}
+
+            {activeTab === 'cohort-owners' && <FacultySection />}
+
+            {activeTab === 'credits' && <CreditsSection />}
+
+            {isAdmin && activeTab === 'home' && (
                 <button
                     onClick={() => setAddModalOpen(true)}
                     className="fixed bottom-6 right-6 bg-[var(--accent)] text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center text-3xl font-bold hover:bg-[var(--accent-hover)] transition-all duration-300 transform hover:scale-110 z-30"
