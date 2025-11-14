@@ -711,14 +711,24 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'VARSHITHA K',
+        name: 'VARSHITHA',
         register_number: '103CS23056',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/wBmWVz71/varshitha.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A clean and modern personal portfolio built to highlight skills, education, and achievements in a simple, professional format.',
+                link: 'https://portfolio-varshi.vercel.app/'
+            },
+            {
+                title: 'KPT NSS Website',
+                description: 'A dedicated web page showcasing NSS activities, events, volunteers, and service initiatives at KPT with a minimal and neat UI.',
+                link: 'https://nss-mu.vercel.app/'
+            },
+            {
+                title: 'War Memorial of Martyrs (Near KPT)',
+                description: 'A tribute website honoring the martyrs near KPT, featuring images, details, and respectful presentation of the memorial information.',
+                link: 'https://war-memorial1.vercel.app/'
             }
         ]
     },

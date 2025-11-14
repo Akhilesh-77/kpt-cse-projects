@@ -16,6 +16,8 @@ import Navigation from './components/Navigation';
 import FacultySection from './components/FacultySection';
 import CreditsSection from './components/CreditsSection';
 import ProjectsSection from './components/ProjectsSection';
+import EventsSection from './components/EventsSection';
+import AddEventModal from './components/AddEventModal';
 import FacultyModal from './components/FacultyModal';
 
 const App: React.FC = () => {
@@ -26,9 +28,10 @@ const App: React.FC = () => {
     const [studentToEdit, setStudentToEdit] = useState<Student | null>(null);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+    const [isAddEventModalOpen, setAddEventModalOpen] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [activeTab, setActiveTab] = useState<'home' | 'projects' | 'cohort-owners' | 'credits'>('home');
+    const [activeTab, setActiveTab] = useState<'home' | 'projects' | 'cohort-owners' | 'events' | 'credits'>('home');
 
     const [isAdmin, setIsAdmin] = useState<boolean>(() => {
         return sessionStorage.getItem('isAdmin') === 'true';
@@ -289,6 +292,8 @@ const App: React.FC = () => {
 
             {activeTab === 'cohort-owners' && <FacultySection onSelectFaculty={handleSelectFaculty} />}
 
+            {activeTab === 'events' && <EventsSection onAddEventClick={() => setAddEventModalOpen(true)} />}
+
             {activeTab === 'credits' && <CreditsSection />}
 
             {isAdmin && activeTab === 'home' && (
@@ -336,6 +341,12 @@ const App: React.FC = () => {
                 isOpen={isLoginModalOpen}
                 onClose={() => setLoginModalOpen(false)}
                 onLogin={handleLogin}
+            />
+            
+            <AddEventModal
+                isOpen={isAddEventModalOpen}
+                onClose={() => setAddEventModalOpen(false)}
+                setToastMessage={setToastMessage}
             />
             
             <Toast message={toastMessage} onClose={() => setToastMessage(null)} />

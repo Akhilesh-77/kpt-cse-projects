@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ currentTheme, setTheme, isAdmin, onLogi
                     />
                     <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)]">
                         KPT Computer Science & Engineering
-                        <span className="block text-lg md:text-xl font-normal text-[var(--text-secondary)] mt-1">3rd Year Project Showcase</span>
+                        <span className="block text-lg md:text-xl font-normal text-[var(--text-secondary)] mt-1">CS Projects & Events Showcase</span>
                     </h1>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-4">

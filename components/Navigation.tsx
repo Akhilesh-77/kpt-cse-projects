@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Tab = 'home' | 'projects' | 'cohort-owners' | 'credits';
+type Tab = 'home' | 'projects' | 'cohort-owners' | 'events' | 'credits';
 
 interface NavigationProps {
     activeTab: Tab;
@@ -36,6 +36,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
                         aria-pressed={activeTab === 'cohort-owners'}
                     >
                         CS DEPT
+                    </button>
+                    <button 
+                        onClick={() => onTabChange('events')}
+                        className={`${navButtonClasses} ${activeTab === 'events' ? activeClasses : inactiveClasses}`}
+                        aria-pressed={activeTab === 'events'}
+                    >
+                        Events
                     </button>
                     <button 
                         onClick={() => onTabChange('credits')}
