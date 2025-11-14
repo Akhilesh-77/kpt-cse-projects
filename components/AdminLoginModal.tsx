@@ -13,7 +13,7 @@ const AdminLoginModal: React.FC<AdminLoginModalProps> = ({ isOpen, onClose, onLo
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === 'admin' && password === 'admin') {
+        if (username === 'admin' && password === 'akhileshistheboss') {
             setError('');
             onLogin();
         } else {

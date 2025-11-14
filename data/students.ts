@@ -417,12 +417,17 @@ export const students: Student[] = [
     {
         name: 'MOHAMMAD HAIRAZ',
         register_number: '103CS23028',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/hv8g5bxg/hairaz.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
                 description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                link: 'https://hairazeuidhu.netlify.app/'
+            },
+            {
+                title: 'Crust Restaurant & Food Ordering Website',
+                description: 'A visually appealing food ordering website featuring menu categories, restaurant branding, interactive UI components, and a smooth ordering flow.',
+                link: 'https://food-del-nine-plum.vercel.app/'
             }
         ]
     },
