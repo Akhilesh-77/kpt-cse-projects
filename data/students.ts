@@ -481,7 +481,7 @@ export const students: Student[] = [
     },
     {
         name: 'POOJARY ASMITHA',
-        register_number: '103CS23034',
+        register_number: '103CS23035',
         avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
         projects: [
             {
@@ -493,7 +493,7 @@ export const students: Student[] = [
     },
     {
         name: 'PEERMAHAMAD',
-        register_number: '103CS23035',
+        register_number: '103CS23034',
         avatar: 'https://i.postimg.cc/Z5V0wZF0/peer.png',
         projects: [
             {
