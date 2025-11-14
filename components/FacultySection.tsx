@@ -1,5 +1,12 @@
 import React from 'react';
 
+const hodData = {
+    name: 'Prof. Parashuram D Talwar',
+    role: 'Head of Department of CS',
+    department: 'Computer Science and Engineering Dept.',
+    image: 'https://i.postimg.cc/SKMG7FyZ/parashuram-talawar-sir.png'
+};
+
 const facultyData = [
     {
         name: 'Mrs. Leelavathi R.',
@@ -32,7 +39,13 @@ const FacultyCard: React.FC<{ faculty: typeof facultyData[0] }> = ({ faculty }) 
 const FacultySection: React.FC = () => {
     return (
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-             <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)]">
+            <h2 className="text-4xl font-bold text-center mb-8 text-[var(--text-secondary)]">
+                Head of Department
+            </h2>
+            <div className="flex justify-center items-center mb-16">
+                <FacultyCard faculty={hodData} />
+            </div>
+            <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)]">
                 Cohort Owners / Faculty
             </h2>
             <div className="flex flex-col md:flex-row gap-10 justify-center items-center mb-8">

@@ -11,6 +11,10 @@ const creatorData = {
 
 const guidanceData = [
     {
+        name: 'Prof. Parashuram D Talwar',
+        role: 'Head of Department of CS',
+    },
+    {
         name: 'Mrs. Leelavathi R.',
         role: 'Selection Grade Lecturer',
     },

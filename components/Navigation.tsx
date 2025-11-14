@@ -35,7 +35,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
                         className={`${navButtonClasses} ${activeTab === 'cohort-owners' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'cohort-owners'}
                     >
-                        Cohort Owners
+                        CS DEPT
                     </button>
                     <button 
                         onClick={() => onTabChange('credits')}
