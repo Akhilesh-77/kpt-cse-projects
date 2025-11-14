@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Student, Theme, SortOption } from './types';
+import { Student, Theme, SortOption, FacultyMember } from './types';
 import { students as initialStudents } from './data/students';
+import { allFaculty } from './data/faculty';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import StudentGrid from './components/StudentGrid';
@@ -15,11 +16,13 @@ import Navigation from './components/Navigation';
 import FacultySection from './components/FacultySection';
 import CreditsSection from './components/CreditsSection';
 import ProjectsSection from './components/ProjectsSection';
+import FacultyModal from './components/FacultyModal';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOption, setSortOption] = useState<SortOption>('name-asc');
     const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
+    const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
     const [studentToEdit, setStudentToEdit] = useState<Student | null>(null);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
@@ -49,12 +52,23 @@ const App: React.FC = () => {
     // Routing Effect for initial load from URL
     useEffect(() => {
         const path = window.location.pathname;
-        const match = path.match(/^\/student\/([\w-]+)$/);
-        if (match) {
-            const registerNumber = match[1];
+        const studentMatch = path.match(/^\/student\/([\w-]+)$/);
+        if (studentMatch) {
+            const registerNumber = studentMatch[1];
             const studentFromUrl = students.find(s => s.register_number === registerNumber);
             if (studentFromUrl) {
                 setSelectedStudent(studentFromUrl);
+            }
+            return;
+        }
+        
+        const facultyMatch = path.match(/^\/faculty\/([\w-]+)$/);
+        if (facultyMatch) {
+            const facultyId = facultyMatch[1];
+            const facultyFromUrl = allFaculty.find(f => f.id === facultyId);
+            if (facultyFromUrl) {
+                setSelectedFaculty(facultyFromUrl);
+                setActiveTab('cohort-owners');
             }
         }
     }, [students]);
@@ -63,13 +77,26 @@ const App: React.FC = () => {
     useEffect(() => {
         const handlePopState = () => {
             const path = window.location.pathname;
-            const match = path.match(/^\/student\/([\w-]+)$/);
-            if (match) {
-                const registerNumber = match[1];
+            
+            const studentMatch = path.match(/^\/student\/([\w-]+)$/);
+            if (studentMatch) {
+                const registerNumber = studentMatch[1];
                 const studentFromUrl = students.find(s => s.register_number === registerNumber);
                 setSelectedStudent(studentFromUrl || null);
+                setSelectedFaculty(null);
             } else {
                 setSelectedStudent(null);
+            }
+
+            const facultyMatch = path.match(/^\/faculty\/([\w-]+)$/);
+            if (facultyMatch) {
+                const facultyId = facultyMatch[1];
+                const facultyFromUrl = allFaculty.find(f => f.id === facultyId);
+                setSelectedFaculty(facultyFromUrl || null);
+                setSelectedStudent(null);
+                if(facultyFromUrl) setActiveTab('cohort-owners');
+            } else {
+                setSelectedFaculty(null);
             }
         };
         window.addEventListener('popstate', handlePopState);
@@ -124,6 +151,17 @@ const App: React.FC = () => {
 
     const handleCloseModal = () => {
         setSelectedStudent(null);
+        window.history.pushState(null, '', '/');
+    };
+
+    const handleSelectFaculty = (faculty: FacultyMember) => {
+        setSelectedFaculty(faculty);
+        const url = `/faculty/${faculty.id}`;
+        window.history.pushState({ facultyId: faculty.id }, faculty.name, url);
+    };
+
+    const handleCloseFacultyModal = () => {
+        setSelectedFaculty(null);
         window.history.pushState(null, '', '/');
     };
 
@@ -249,7 +287,7 @@ const App: React.FC = () => {
 
             {activeTab === 'projects' && <ProjectsSection students={students} />}
 
-            {activeTab === 'cohort-owners' && <FacultySection />}
+            {activeTab === 'cohort-owners' && <FacultySection onSelectFaculty={handleSelectFaculty} />}
 
             {activeTab === 'credits' && <CreditsSection />}
 
@@ -269,6 +307,12 @@ const App: React.FC = () => {
                 isAdmin={isAdmin}
                 onEdit={handleOpenEditModal}
                 onDelete={handleDeleteStudent}
+                setToastMessage={setToastMessage}
+            />
+
+            <FacultyModal
+                faculty={selectedFaculty}
+                onClose={handleCloseFacultyModal}
                 setToastMessage={setToastMessage}
             />
             

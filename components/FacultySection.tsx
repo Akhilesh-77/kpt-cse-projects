@@ -1,72 +1,15 @@
 import React from 'react';
+import { FacultyMember } from '../types';
+import { hodData, facultyData, guestLecturersData } from '../data/faculty';
 
-// Type definition for a faculty member
-interface FacultyMember {
-    name: string;
-    role: string;
-    image: string;
-    department?: string;
-    subjects?: string;
+interface FacultySectionProps {
+    onSelectFaculty: (faculty: FacultyMember) => void;
 }
 
-const hodData: FacultyMember = {
-    name: 'Prof. Parashuram D Talwar',
-    role: 'Head of Department of CS',
-    department: 'Computer Science and Engineering Dept.',
-    image: 'https://i.postimg.cc/SKMG7FyZ/parashuram-talawar-sir.png'
-};
-
-const facultyData: FacultyMember[] = [
-    {
-        name: 'Mrs. Leelavathi R.',
-        role: 'Selection Grade Lecturer',
-        department: 'Computer Science and Engineering Dept.',
-        image: 'https://i.postimg.cc/N9R7ywb5/leelavathi-mam-jpg.png'
-    },
-    {
-        name: 'Mr. Sathish S',
-        role: 'Lecturer',
-        department: 'Computer Science and Engineering Dept.',
-        image: 'https://i.postimg.cc/S2yQF6XM/sathish-sir.jpg'
-    },
-    {
-        name: 'Mrs. Usha Naik',
-        role: 'Lecturer',
-        department: 'Computer Science and Engineering Dept.',
-        image: 'https://i.postimg.cc/Px4DZcrC/usha-mam.png'
-    }
-];
-
-const guestLecturersData: FacultyMember[] = [
-    {
-        name: 'Mrs. Akshitha',
-        role: 'Guest Lecturer',
-        image: 'https://i.postimg.cc/wMrPF143/akshitha.png',
-        subjects: 'Software Engineering, DBMS'
-    },
-    {
-        name: 'Mrs. Akshatha D',
-        role: 'Guest Lecturer',
-        image: 'https://i.postimg.cc/N0xzSJPw/akshatha.png',
-        subjects: 'FOC (Fundamentals of Computer)'
-    },
-    {
-        name: 'Mrs. Likhitha',
-        role: 'Guest Lecturer',
-        image: 'https://i.postimg.cc/1zyWG0RG/likitha.png',
-        subjects: 'IT Skills, Computer Hardware Management System'
-    },
-    {
-        name: 'Mrs. Sheetal J Shet',
-        role: 'Guest Lecturer',
-        image: 'https://i.postimg.cc/9X4jw2nC/sheethal.png',
-        subjects: 'Computer Networking'
-    }
-];
-
-const FacultyCard: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => (
+const FacultyCard: React.FC<{ faculty: FacultyMember; onSelect: (faculty: FacultyMember) => void; }> = ({ faculty, onSelect }) => (
     <div 
-        className="bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 flex flex-col items-center text-center gap-6 w-full max-w-sm transform transition-all duration-300 hover:scale-105"
+        onClick={() => onSelect(faculty)}
+        className="bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 flex flex-col items-center text-center gap-6 w-full max-w-sm transform transition-all duration-300 hover:scale-105 cursor-pointer"
         style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)', minHeight: '380px' } as React.CSSProperties}
     >
         <img src={faculty.image} alt={`Profile of ${faculty.name}`} className="w-40 h-40 rounded-full object-cover border-4 border-[var(--border-color)]" />
@@ -84,20 +27,20 @@ const FacultyCard: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => (
     </div>
 );
 
-const FacultySection: React.FC = () => {
+const FacultySection: React.FC<FacultySectionProps> = ({ onSelectFaculty }) => {
     return (
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
             <h2 className="text-4xl font-bold text-center mb-8 text-[var(--text-secondary)]">
                 Head of Department
             </h2>
             <div className="flex justify-center items-center mb-16">
-                <FacultyCard faculty={hodData} />
+                <FacultyCard faculty={hodData} onSelect={onSelectFaculty} />
             </div>
             <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)]">
                 Permanent Faculties
             </h2>
             <div className="flex flex-wrap gap-10 justify-center items-center mb-16">
-                {facultyData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} />)}
+                {facultyData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} onSelect={onSelectFaculty} />)}
             </div>
 
             <p className="text-center text-xl font-semibold text-[var(--text-muted)] mt-16">
@@ -108,7 +51,7 @@ const FacultySection: React.FC = () => {
                 Guest Lecturers
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 items-start mb-8">
-                {guestLecturersData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} />)}
+                {guestLecturersData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} onSelect={onSelectFaculty} />)}
             </div>
             
              <style>{`
