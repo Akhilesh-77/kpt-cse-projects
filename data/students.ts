@@ -36,7 +36,7 @@ export const students: Student[] = [
     {
         name: 'AMITH',
         register_number: '103CS23005',
-        avatar: 'https://i.postimg.cc/3N5zrj8N/amith.png',
+        avatar: 'https://i.postimg.cc/wBypm2n9/amith.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -65,7 +65,7 @@ export const students: Student[] = [
     {
         name: 'D YASHWANTHA REDDY',
         register_number: '103CS23011',
-        avatar: 'https://i.postimg.cc/3RKDsVpH/yashwantha.png',
+        avatar: 'https://i.postimg.cc/vmBWLgvr/yashwantha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -114,7 +114,7 @@ export const students: Student[] = [
     {
         name: 'TUSHAR',
         register_number: '103CS23055',
-        avatar: 'https://i.postimg.cc/YSXWw8xQ/tushar.png',
+        avatar: 'https://i.postimg.cc/RFgLx1VK/tushar.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -131,7 +131,7 @@ export const students: Student[] = [
     {
         name: 'A H HAMSAAS MAHMOOD',
         register_number: '103CS23001',
-        avatar: 'https://i.postimg.cc/Vkbt2q34/hamsas.png',
+        avatar: 'https://i.postimg.cc/hjLNL5sh/hamsaas.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -417,7 +417,7 @@ export const students: Student[] = [
     {
         name: 'MOHAMMAD HAIRAZ',
         register_number: '103CS23028',
-        avatar: 'https://i.postimg.cc/hv8g5bxg/hairaz.png',
+        avatar: 'https://i.postimg.cc/zXxZ24rw/hairaz.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -494,7 +494,7 @@ export const students: Student[] = [
     {
         name: 'PEERMAHAMAD',
         register_number: '103CS23034',
-        avatar: 'https://i.postimg.cc/Z5V0wZF0/peer.png',
+        avatar: 'https://i.postimg.cc/1XR7p5fx/peer.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -559,7 +559,7 @@ export const students: Student[] = [
     {
         name: 'SAMRADH B MALLI',
         register_number: '103CS23042',
-        avatar: 'https://i.postimg.cc/HxKcSj6g/samradh.png',
+        avatar: 'https://i.postimg.cc/g09MgKnV/samradh.png',
         projects: [
             {
                 title: 'KPT Yoga Club Website',
@@ -713,7 +713,7 @@ export const students: Student[] = [
     {
         name: 'VARSHITHA',
         register_number: '103CS23056',
-        avatar: 'https://i.postimg.cc/wBmWVz71/varshitha.png',
+        avatar: 'https://i.postimg.cc/7LD3Ct5p/varshitha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -735,7 +735,7 @@ export const students: Student[] = [
     {
         name: 'VEEKSHA',
         register_number: '103CS23057',
-        avatar: 'https://i.postimg.cc/DynYvZ2W/veeksha.png',
+        avatar: 'https://i.postimg.cc/J7ypCgZZ/veeksha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -781,7 +781,7 @@ export const students: Student[] = [
     {
         name: 'VIKHYATH',
         register_number: '103CS23060',
-        avatar: 'https://i.postimg.cc/gkg4GHtz/vikyath.png',
+        avatar: 'https://i.postimg.cc/ZRWxZBBt/vikyath.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',

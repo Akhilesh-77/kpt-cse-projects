@@ -101,6 +101,12 @@ const CounterCard: React.FC<{ label: string; count: number }> = ({ label, count 
     );
 };
 
+const ShareIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+    </svg>
+);
+
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
     const [filter, setFilter] = useState<'all' | 'single' | 'group'>('all');
@@ -141,6 +147,24 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
         }
     }, [processedProjects, filter]);
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'KPT CSE Projects Showcase',
+            text: 'Check out all the unique projects submitted by students from KPT Computer Science & Engineering!',
+            url: `${window.location.origin}/#projects`,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.error('Sharing failed:', error);
+            }
+        } else {
+            console.log('Web Share API not supported in this browser.');
+        }
+    };
+
     const FilterButton: React.FC<{label: string, value: typeof filter, count: number}> = ({ label, value, count }) => {
         const isActive = filter === value;
         const baseClasses = "relative px-4 py-2 rounded-md font-semibold transition-colors duration-300";
@@ -159,9 +183,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
 
     return (
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-            <h2 className="text-4xl font-bold text-center mb-4 text-[var(--text-secondary)]">
-                Projects Showcase
-            </h2>
+            <div className="flex justify-center items-center gap-4 text-center mb-4">
+                <h2 className="text-4xl font-bold text-[var(--text-secondary)]">
+                    Projects Showcase
+                </h2>
+                {navigator.share && (
+                    <button 
+                        onClick={handleShare}
+                        className="p-2 rounded-full hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]" 
+                        aria-label="Share Projects Page"
+                    >
+                        <ShareIcon />
+                    </button>
+                )}
+            </div>
             <p className="text-center text-lg text-[var(--text-muted)] mb-8">
                 A collection of all unique projects submitted by students.
             </p>
