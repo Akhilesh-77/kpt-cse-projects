@@ -3,8 +3,9 @@ import React from 'react';
 const creatorData = {
     name: 'Akhilesh U',
     details: [
-        '5th Sem, 3rd Year CSE',
-        'KPT Mangalore'
+        '5th Semester',
+        'Third Year CSE',
+        'Karnataka (Govt.) Polytechnic Mangalore'
     ],
     image: 'https://i.postimg.cc/0Mm4fF5Y/akhilesh.jpg'
 };
@@ -16,11 +17,11 @@ const guidanceData = [
     },
     {
         name: 'Mrs. Leelavathi R.',
-        role: 'Selection Grade Lecturer',
+        role: 'Selection Grade Lecturer (CS)',
     },
     {
         name: 'Mr. Sathish S',
-        role: 'Lecturer',
+        role: 'Lecturer (CS)',
     }
 ];
 
