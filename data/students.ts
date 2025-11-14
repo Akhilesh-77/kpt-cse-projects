@@ -492,14 +492,19 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'PEERMOHAMAD',
+        name: 'PEERMAHAMAD',
         register_number: '103CS23035',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/Z5V0wZF0/peer.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A personal digital resume showcasing academic details, skills, and identity with a simple and neat user interface.',
+                link: 'https://portfolio1-teal-phi.vercel.app/'
+            },
+            {
+                title: 'Amritha Clinic – Multispeciality & Diagnostic Center',
+                description: 'A clean informational website created for Amritha Clinic, presenting services, clinic branding, and core details in a straightforward layout.',
+                link: 'https://amritha-clinic.netlify.app/'
             }
         ]
     },

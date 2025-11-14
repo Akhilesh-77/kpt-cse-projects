@@ -46,6 +46,39 @@ const App: React.FC = () => {
         sessionStorage.setItem('isAdmin', String(isAdmin));
     }, [isAdmin]);
 
+    // Routing Effect for initial load from URL
+    useEffect(() => {
+        const path = window.location.pathname;
+        const match = path.match(/^\/student\/([\w-]+)$/);
+        if (match) {
+            const registerNumber = match[1];
+            const studentFromUrl = students.find(s => s.register_number === registerNumber);
+            if (studentFromUrl) {
+                setSelectedStudent(studentFromUrl);
+            }
+        }
+    }, [students]);
+
+    // Routing Effect for browser navigation (back/forward buttons)
+    useEffect(() => {
+        const handlePopState = () => {
+            const path = window.location.pathname;
+            const match = path.match(/^\/student\/([\w-]+)$/);
+            if (match) {
+                const registerNumber = match[1];
+                const studentFromUrl = students.find(s => s.register_number === registerNumber);
+                setSelectedStudent(studentFromUrl || null);
+            } else {
+                setSelectedStudent(null);
+            }
+        };
+        window.addEventListener('popstate', handlePopState);
+        return () => {
+            window.removeEventListener('popstate', handlePopState);
+        };
+    }, [students]);
+
+
     const sortedAndFilteredStudents = useMemo(() => {
         const query = searchQuery.toLowerCase().trim();
         let filtered = students;
@@ -83,6 +116,17 @@ const App: React.FC = () => {
         });
     }, [searchQuery, students, sortOption]);
 
+    const handleSelectStudent = (student: Student) => {
+        setSelectedStudent(student);
+        const url = `/student/${student.register_number}`;
+        window.history.pushState({ studentId: student.register_number }, student.name, url);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedStudent(null);
+        window.history.pushState(null, '', '/');
+    };
+
     const handleAddStudent = (newStudent: Student) => {
         setStudents(prevStudents => [...prevStudents, newStudent]);
         setAddModalOpen(false);
@@ -102,7 +146,7 @@ const App: React.FC = () => {
     const handleDeleteStudent = (registerNumber: string) => {
         if (window.confirm('Are you sure you want to delete this student record? This action cannot be undone.')) {
             setStudents(prevStudents => prevStudents.filter(s => s.register_number !== registerNumber));
-            setSelectedStudent(null);
+            handleCloseModal();
             setToastMessage('Student deleted successfully!');
         }
     };
@@ -191,7 +235,7 @@ const App: React.FC = () => {
                     </div>
 
                     {students.length > 0 ? (
-                        <StudentGrid students={sortedAndFilteredStudents} onSelectStudent={setSelectedStudent} />
+                        <StudentGrid students={sortedAndFilteredStudents} onSelectStudent={handleSelectStudent} />
                     ) : (
                         <div className="text-center py-16">
                             <h2 className="text-2xl font-semibold text-[var(--text-secondary)]">No Students Found</h2>
@@ -221,10 +265,11 @@ const App: React.FC = () => {
             
             <ProjectModal 
                 student={selectedStudent} 
-                onClose={() => setSelectedStudent(null)}
+                onClose={handleCloseModal}
                 isAdmin={isAdmin}
                 onEdit={handleOpenEditModal}
                 onDelete={handleDeleteStudent}
+                setToastMessage={setToastMessage}
             />
             
             {isAdmin && (

@@ -7,6 +7,7 @@ interface ProjectModalProps {
     isAdmin: boolean;
     onEdit: (student: Student) => void;
     onDelete: (registerNumber: string) => void;
+    setToastMessage: (message: string) => void;
 }
 
 const PencilIcon = () => (
@@ -21,8 +22,14 @@ const TrashIcon = () => (
     </svg>
 );
 
+const ShareIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+    </svg>
+);
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, onEdit, onDelete }) => {
+
+const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, onEdit, onDelete, setToastMessage }) => {
     useEffect(() => {
         const handleEsc = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
@@ -36,6 +43,27 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
     }, [onClose]);
 
     if (!student) return null;
+    
+    const handleShare = async () => {
+        if (!student) return;
+
+        const shareData = {
+            title: `KPT Project Showcase: ${student.name}`,
+            text: `Check out the projects by ${student.name} from KPT CSE!`,
+            url: window.location.href,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                // Log error but don't show a toast, as it's likely the user cancelled the share.
+                console.log('Share action was cancelled or failed.', error);
+            }
+        } else {
+            setToastMessage('Native sharing is not supported on this browser.');
+        }
+    };
 
     return (
         <div
@@ -56,6 +84,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
+                            <button onClick={handleShare} className="p-2 rounded-full hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Share">
+                                <ShareIcon />
+                            </button>
                              {isAdmin && (
                                 <>
                                     <button onClick={() => onEdit(student)} className="p-2 rounded-full hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Edit student">

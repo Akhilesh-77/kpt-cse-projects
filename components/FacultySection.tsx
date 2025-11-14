@@ -28,6 +28,12 @@ const facultyData: FacultyMember[] = [
         role: 'Lecturer',
         department: 'Computer Science and Engineering Dept.',
         image: 'https://i.postimg.cc/S2yQF6XM/sathish-sir.jpg'
+    },
+    {
+        name: 'Mrs. Usha Naik',
+        role: 'Lecturer',
+        department: 'Computer Science and Engineering Dept.',
+        image: 'https://i.postimg.cc/Px4DZcrC/usha-mam.png'
     }
 ];
 
@@ -63,7 +69,7 @@ const FacultyCard: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => (
         className="bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 flex flex-col items-center text-center gap-6 w-full max-w-sm transform transition-all duration-300 hover:scale-105"
         style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)', minHeight: '380px' } as React.CSSProperties}
     >
-        <img src={faculty.image} alt={`Profile of ${faculty.name}`} className="w-32 h-32 rounded-full object-cover border-4 border-[var(--border-color)]" />
+        <img src={faculty.image} alt={`Profile of ${faculty.name}`} className="w-40 h-40 rounded-full object-cover border-4 border-[var(--border-color)]" />
         <div className="flex flex-col flex-grow justify-center">
             <h3 className="text-2xl font-bold text-[var(--text-primary)]">{faculty.name}</h3>
             <p className="text-[var(--accent)] font-semibold text-lg">{faculty.role}</p>
@@ -90,7 +96,7 @@ const FacultySection: React.FC = () => {
             <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)]">
                 Permanent Faculties
             </h2>
-            <div className="flex flex-col md:flex-row gap-10 justify-center items-center mb-16">
+            <div className="flex flex-wrap gap-10 justify-center items-center mb-16">
                 {facultyData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} />)}
             </div>
 
