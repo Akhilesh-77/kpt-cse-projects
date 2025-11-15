@@ -381,12 +381,22 @@ export const students: Student[] = [
     {
         name: 'LAKSHMI',
         register_number: '103CS23025',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/SKs8wVx8/lakshmi.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A modern resume portfolio showcasing personal details, academic profile, and core skills in a neat, responsive layout.',
+                link: 'https://lakshmi10-iota.vercel.app'
+            },
+            {
+                title: 'KPT NSS Website',
+                description: 'A website displaying NSS activities, volunteer programs, and event highlights of KPT.',
+                link: 'https://nss-mu.vercel.app/'
+            },
+            {
+                title: 'War Memorial of Martyrs (Near KPT)',
+                description: 'A respectful tribute website sharing information and visuals about the martyrs\' memorial near KPT.',
+                link: 'https://war-memorial1.vercel.app/'
             }
         ]
     },
@@ -605,12 +615,27 @@ export const students: Student[] = [
     {
         name: 'SHANKAR',
         register_number: '103CS23046',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/jjLw85My/shankar.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A clean digital resume showcasing education, skills, and personal details in a professional manner.',
+                link: 'https://shankar01-portfolio.netlify.app/'
+            },
+            {
+                title: 'Indian Oil Fuel Station',
+                description: 'A service-oriented fuel station website presenting fuel details, service information, and branding.',
+                link: 'https://sapthagiri-enterprises.netlify.app/'
+            },
+            {
+                title: 'Data Structures with Python – Lab Manual',
+                description: 'A digital version of the CSE Data Structures with Python lab manual, containing organized experiment details.',
+                link: 'https://dsp-lab.netlify.app/'
+            },
+            {
+                title: 'Full Stack Development – Department Site',
+                description: 'A dedicated page for the CSE department’s Full Stack Development content, notes, and structured resources.',
+                link: 'https://fullstack-record.onrender.com/'
             }
         ]
     },
@@ -641,12 +666,22 @@ export const students: Student[] = [
     {
         name: 'SHYAMSHREE',
         register_number: '103CS23049',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/2j4q9g7g/shyam.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A structured personal portfolio presenting skills, education, and achievements with a clean layout.',
+                link: 'https://my-portfolio-2-rust.vercel.app'
+            },
+            {
+                title: 'Junior Technical School Website',
+                description: 'A school-themed demo website designed with simple navigation and neatly organized informational sections.',
+                link: 'https://junior-technical-school-l97z.onrender.com/'
+            },
+            {
+                title: 'ThinkBoard – Notes Platform',
+                description: 'A lightweight note-taking web application offering a simple interface for creating and viewing notes.',
+                link: 'https://thinboard-frontend.onrender.com'
             }
         ]
     },
