@@ -461,9 +461,9 @@ export const students: Student[] = [
             {
                 title: 'Resume Portfolio Website',
                 description: 'A neatly structured personal portfolio presenting education, skills, and achievements with a clean interface.',
-                link: 'https://portfolio-two-lac-14.vercel.a'
+                link: 'https://portfolio-two-lac-14.vercel/'
             },
-                        {
+            {
                 title: 'Junior Technical School Website',
                 description: 'A school-themed demo website designed with simple navigation and neatly organized informational sections.',
                 link: 'https://junior-technical-school-l97z.onrender.com/'
