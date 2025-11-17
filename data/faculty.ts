@@ -68,6 +68,13 @@ export const guestLecturersData: FacultyMember[] = [
         role: 'Guest Lecturer',
         image: 'https://i.postimg.cc/9X4jw2nC/sheethal.png',
         subjects: 'Computer Networking'
+    },
+    {
+        id: slugify('Bhoovika Salian'),
+        name: 'Bhoovika Salian',
+        role: 'Lab Instructor',
+        department: 'Computer Science and Engineering Dept.',
+        image: 'https://i.postimg.cc/VN4WLR7Q/bhoovika.jpg'
     }
 ];
 

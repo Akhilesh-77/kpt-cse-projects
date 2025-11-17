@@ -48,7 +48,7 @@ const FacultySection: React.FC<FacultySectionProps> = ({ onSelectFaculty }) => {
             </p>
 
             <h2 className="text-4xl font-bold text-center mt-8 mb-12 text-[var(--text-secondary)]">
-                Guest Lecturers
+                Guest Faculty
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 items-start mb-8">
                 {guestLecturersData.map(faculty => <FacultyCard key={faculty.name} faculty={faculty} onSelect={onSelectFaculty} />)}

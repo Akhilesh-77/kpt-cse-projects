@@ -454,14 +454,19 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'NAGACHAITHANYA M',
+        name: 'NAGACHAITHANYA',
         register_number: '103CS23031',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/W1z2HpQh/naga.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A neatly structured personal portfolio presenting education, skills, and achievements with a clean interface.',
+                link: 'https://portfolio-two-lac-14.vercel.a'
+            },
+                        {
+                title: 'Junior Technical School Website',
+                description: 'A school-themed demo website designed with simple navigation and neatly organized informational sections.',
+                link: 'https://junior-technical-school-l97z.onrender.com/'
             }
         ]
     },
