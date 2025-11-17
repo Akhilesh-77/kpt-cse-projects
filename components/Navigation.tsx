@@ -8,7 +8,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
-    const navButtonClasses = "px-4 py-2 rounded-md font-semibold transition-colors duration-300";
+    const navButtonClasses = "px-4 py-2 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95";
     const activeClasses = "bg-[var(--accent)] text-white";
     const inactiveClasses = "bg-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)]";
 

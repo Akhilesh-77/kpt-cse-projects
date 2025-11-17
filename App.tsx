@@ -83,8 +83,9 @@ const App: React.FC = () => {
             // Priority 2: If no modal path, clear modals and set tab from hash
             setSelectedStudent(null);
             setSelectedFaculty(null);
-            if (['projects', 'cohort-owners', 'events', 'credits'].includes(hash)) {
-                setActiveTab(hash as Tab);
+            const hashPart = hash.split('?')[0];
+            if (['projects', 'cohort-owners', 'events', 'credits'].includes(hashPart)) {
+                setActiveTab(hashPart as Tab);
             } else {
                 setActiveTab('home');
             }

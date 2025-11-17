@@ -28,7 +28,7 @@ const AdminLoginModal: React.FC<AdminLoginModalProps> = ({ isOpen, onClose, onLo
 
     return (
         <div className="fixed inset-0 bg-black/75 flex justify-center items-center z-50 p-4" onClick={onClose}>
-            <div className="bg-[var(--bg-secondary)] rounded-xl shadow-2xl w-full max-w-sm" onClick={e => e.stopPropagation()}>
+            <div className="bg-[var(--bg-secondary)] rounded-xl shadow-2xl w-full max-w-sm animate-fade-in-up" onClick={e => e.stopPropagation()}>
                 <form onSubmit={handleSubmit}>
                     <div className="p-8">
                         <h2 className="text-2xl font-bold text-center text-[var(--text-primary)] mb-2">Admin Login</h2>

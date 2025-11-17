@@ -79,7 +79,7 @@ Thank you.
 
     return (
         <div className="fixed inset-0 bg-black/75 flex justify-center items-center z-50 p-4" onClick={onClose}>
-            <div className="bg-[var(--bg-secondary)] rounded-xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <div className="bg-[var(--bg-secondary)] rounded-xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-fade-in-up" onClick={e => e.stopPropagation()}>
                 <form onSubmit={handleSubmit}>
                      <div className="p-6">
                         <h2 className="text-2xl font-bold text-[var(--text-primary)]">Add New Event</h2>

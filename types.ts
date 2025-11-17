@@ -20,6 +20,14 @@ export interface FacultyMember {
     subjects?: string;
 }
 
-export type Theme = 'black' | 'white' | 'pink';
+export interface Event {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  timestamp: string;
+}
+
+export type Theme = 'black' | 'white' | 'pink' | 'yellow';
 
 export type SortOption = 'name-asc' | 'name-desc' | 'reg-asc' | 'reg-desc' | 'latest-asc' | 'projects-desc';

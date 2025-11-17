@@ -122,10 +122,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center px-4 py-2 bg-[var(--accent)] text-white rounded-md hover:bg-[var(--accent-hover)] transition-colors duration-300 font-semibold"
+                                        className="inline-flex items-center px-4 py-2 bg-[var(--accent)] text-white rounded-md hover:bg-[var(--accent-hover)] transition-all duration-300 font-semibold transform hover:-translate-y-0.5 active:scale-95"
                                     >
                                         Visit Project
-                                        <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                         </svg>
                                     </a>
@@ -139,11 +139,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
             </div>
             <style>{`
                 @keyframes fade-in {
-                    from { opacity: 0; transform: scale(0.95); }
-                    to { opacity: 1; transform: scale(1); }
+                    from { opacity: 0; transform: scale(0.95) translateY(15px); }
+                    to { opacity: 1; transform: scale(1) translateY(0); }
                 }
                 .animate-fade-in {
-                    animation: fade-in 0.3s ease-out forwards;
+                    animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 }
             `}</style>
         </div>

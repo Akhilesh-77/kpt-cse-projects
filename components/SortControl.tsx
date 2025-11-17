@@ -42,7 +42,7 @@ const SortControl: React.FC<SortControlProps> = ({ sortOption, setSortOption }) 
         <div className="relative flex-shrink-0" ref={menuRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-[var(--bg-secondary)] border-2 border-[var(--border-color)] rounded-full text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all duration-300 cursor-pointer"
+                className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-[var(--bg-secondary)] border-2 border-[var(--border-color)] rounded-full text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all duration-300 cursor-pointer transform hover:scale-110"
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 aria-label="Sort options"

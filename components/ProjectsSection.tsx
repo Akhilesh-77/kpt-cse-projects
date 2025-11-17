@@ -47,14 +47,14 @@ const useCountUp = (end: number, duration: number = 1500) => {
 };
 
 
-const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject }> = ({ processedProject }) => {
+const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?: string; style?: React.CSSProperties; }> = ({ processedProject, className, style }) => {
     const { project, students } = processedProject;
     const isGroupProject = students.length > 1;
 
     return (
         <div 
-            className="bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300"
-            style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)' } as React.CSSProperties}
+            className={`bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`}
+            style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)', ...style } as React.CSSProperties}
         >
             <div>
                 <h4 className="text-xl font-bold text-[var(--accent)]">{project.title}</h4>
@@ -80,7 +80,7 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject }> = ({ pro
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-2 mt-auto bg-[var(--accent)] text-white rounded-md hover:bg-[var(--accent-hover)] transition-colors duration-300 font-semibold"
+                className="inline-flex items-center justify-center px-4 py-2 mt-auto bg-[var(--accent)] text-white rounded-md hover:bg-[var(--accent-hover)] transition-all duration-300 font-semibold transform hover:-translate-y-0.5 active:scale-95"
             >
                 Visit Project
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,10 +91,10 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject }> = ({ pro
     );
 };
 
-const CounterCard: React.FC<{ label: string; count: number }> = ({ label, count }) => {
+const CounterCard: React.FC<{ label: string; count: number; style?: React.CSSProperties }> = ({ label, count, style }) => {
     const animatedCount = useCountUp(count);
     return (
-        <div className="bg-[var(--bg-secondary)] p-4 rounded-lg shadow-md border border-[var(--border-color)] text-center flex-1 min-w-[150px]">
+        <div className="bg-[var(--bg-secondary)] p-4 rounded-lg shadow-md border border-[var(--border-color)] text-center flex-1 min-w-[150px] opacity-0 animate-fade-in-up" style={style}>
             <p className="text-3xl font-bold text-[var(--accent)]">{animatedCount}</p>
             <p className="text-sm text-[var(--text-secondary)] uppercase tracking-wider">{label}</p>
         </div>
@@ -167,7 +167,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
 
     const FilterButton: React.FC<{label: string, value: typeof filter, count: number}> = ({ label, value, count }) => {
         const isActive = filter === value;
-        const baseClasses = "relative px-4 py-2 rounded-md font-semibold transition-colors duration-300";
+        const baseClasses = "relative px-4 py-2 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95";
         const activeClasses = "bg-[var(--accent)] text-white";
         const inactiveClasses = "bg-[var(--bg-tertiary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)]/70 hover:text-[var(--text-primary)]";
         
@@ -182,8 +182,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
     };
 
     return (
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-            <div className="flex justify-center items-center gap-4 text-center mb-4">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="flex justify-center items-center gap-4 text-center mb-4 opacity-0 animate-fade-in-up">
                 <h2 className="text-4xl font-bold text-[var(--text-secondary)]">
                     Projects Showcase
                 </h2>
@@ -197,17 +197,17 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
                     </button>
                 )}
             </div>
-            <p className="text-center text-lg text-[var(--text-muted)] mb-8">
+            <p className="text-center text-lg text-[var(--text-muted)] mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                 A collection of all unique projects submitted by students.
             </p>
 
             <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
-                <CounterCard label="All Projects" count={projectCounts.all} />
-                <CounterCard label="Single Projects" count={projectCounts.single} />
-                <CounterCard label="Group Projects" count={projectCounts.group} />
+                <CounterCard label="All Projects" count={projectCounts.all} style={{ animationDelay: '200ms' }} />
+                <CounterCard label="Single Projects" count={projectCounts.single} style={{ animationDelay: '300ms' }} />
+                <CounterCard label="Group Projects" count={projectCounts.group} style={{ animationDelay: '400ms' }} />
             </div>
 
-            <div className="flex justify-center items-center gap-4 mb-12">
+            <div className="flex justify-center items-center gap-4 mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
                 <FilterButton label="All Projects" value="all" count={projectCounts.all} />
                 <FilterButton label="Single Projects" value="single" count={projectCounts.single} />
                 <FilterButton label="Group Projects" value="group" count={projectCounts.group} />
@@ -215,28 +215,23 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
 
             {filteredProjects.length > 0 ? (
                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {filteredProjects.map(({ project }) => (
-                        <ProjectInfoCard key={project.link} processedProject={processedProjects.find(p => p.project.link === project.link)!} />
+                    {filteredProjects.map(({ project }, index) => (
+                        <ProjectInfoCard 
+                            key={project.link} 
+                            processedProject={processedProjects.find(p => p.project.link === project.link)!}
+                            className="opacity-0 animate-fade-in-up"
+                            style={{ animationDelay: `${index * 75}ms` }}
+                        />
                     ))}
                 </div>
             ) : (
-                <div className="text-center py-16">
+                <div className="text-center py-16 opacity-0 animate-fade-in-up">
                     <h2 className="text-2xl font-semibold text-[var(--text-secondary)]">No Projects Found</h2>
                     <p className="text-[var(--text-muted)] mt-2">
                         There are no projects in this category.
                     </p>
                 </div>
             )}
-           
-            <style>{`
-                @keyframes fade-in {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.5s ease-out forwards;
-                }
-            `}</style>
         </section>
     );
 };

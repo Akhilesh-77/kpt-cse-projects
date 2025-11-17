@@ -62,6 +62,19 @@
         --border-color: #f9a8d4;
         --shadow-color: rgba(236, 72, 153, 0.15);
       }
+      .theme-yellow {
+          --bg-primary: #fffbeb; /* Light cream */
+          --bg-secondary: #ffffff;
+          --bg-tertiary: #fef3c7; /* Lighter yellow */
+          --bg-backdrop: rgba(255, 251, 235, 0.8);
+          --text-primary: #422006; /* Dark brown */
+          --text-secondary: #78350f; /* Lighter brown */
+          --text-muted: #9ca3af;
+          --accent: #f59e0b; /* Amber 500 */
+          --accent-hover: #d97706; /* Amber 600 */
+          --border-color: #fde68a; /* Amber 200 */
+          --shadow-color: rgba(245, 158, 11, 0.15);
+      }
       body {
         background-color: var(--bg-primary);
         color: var(--text-primary);
@@ -69,6 +82,54 @@
         background-image: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
         background-repeat: no-repeat;
       }
+      @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+      @keyframes story-progress {
+        from { width: 0%; }
+        to { width: 100%; }
+      }
+      .animate-story-progress {
+        animation: story-progress 10s linear forwards;
+      }
+      @keyframes like-heart-animation {
+        0% { transform: scale(0.5); opacity: 0; }
+        50% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1.1); opacity: 0; }
+      }
+      .animate-like-heart {
+        animation: like-heart-animation 0.8s ease-in-out forwards;
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      }
+      @keyframes slide-in-from-right {
+        from { transform: translateX(100%); opacity: 0.5; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slide-out-to-left {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(-100%); opacity: 0.5; }
+      }
+      @keyframes slide-in-from-left {
+        from { transform: translateX(-100%); opacity: 0.5; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slide-out-to-right {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0.5; }
+      }
+      .animate-slide-in-from-right { animation: slide-in-from-right 0.3s ease-out forwards; }
+      .animate-slide-out-to-left { animation: slide-out-to-left 0.3s ease-out forwards; }
+      .animate-slide-in-from-left { animation: slide-in-from-left 0.3s ease-out forwards; }
+      .animate-slide-out-to-right { animation: slide-out-to-right 0.3s ease-out forwards; }
     </style>
   </head>
   <body>

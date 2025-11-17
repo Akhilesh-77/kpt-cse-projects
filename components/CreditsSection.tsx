@@ -27,7 +27,7 @@ const guidanceData = [
 
 const CreatorCard: React.FC<{ creator: typeof creatorData }> = ({ creator }) => (
     <div
-        className="bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 flex flex-col items-center text-center gap-6 w-full max-w-sm transform transition-all duration-300 hover:scale-105"
+        className="bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 flex flex-col items-center text-center gap-6 w-full max-w-sm transform transition-all duration-300 hover:scale-105 opacity-0 animate-fade-in-up"
         style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)' } as React.CSSProperties}
     >
         <img src={creator.image} alt={`Profile of ${creator.name}`} className="w-32 h-32 rounded-full object-cover border-4 border-[var(--border-color)]" />
@@ -43,20 +43,24 @@ const CreatorCard: React.FC<{ creator: typeof creatorData }> = ({ creator }) => 
 
 const CreditsSection: React.FC = () => {
     return (
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-             <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)]">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+             <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-secondary)] opacity-0 animate-fade-in-up">
                 Creator
             </h2>
             <div className="flex justify-center items-center mb-12">
                 <CreatorCard creator={creatorData} />
             </div>
 
-            <h2 className="text-3xl font-bold text-center mb-8 text-[var(--text-secondary)]">
+            <h2 className="text-3xl font-bold text-center mb-8 text-[var(--text-secondary)] opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
                 Under the Guidance of
             </h2>
             <div className="text-center space-y-4 max-w-lg mx-auto">
-                 {guidanceData.map((faculty) => (
-                    <div key={faculty.name} className="bg-[var(--bg-tertiary)] p-4 rounded-lg">
+                 {guidanceData.map((faculty, index) => (
+                    <div 
+                        key={faculty.name} 
+                        className="bg-[var(--bg-tertiary)] p-4 rounded-lg opacity-0 animate-fade-in-up"
+                        style={{ animationDelay: `${300 + index * 100}ms` }}
+                    >
                         <p className="text-xl font-semibold text-[var(--text-primary)]">
                             {faculty.name}
                             <span className="block text-base font-normal text-[var(--text-secondary)]">{faculty.role}</span>
@@ -64,15 +68,6 @@ const CreditsSection: React.FC = () => {
                     </div>
                 ))}
             </div>
-             <style>{`
-                @keyframes fade-in {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.5s ease-out forwards;
-                }
-            `}</style>
         </section>
     );
 };

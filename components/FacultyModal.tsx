@@ -58,8 +58,8 @@ const FacultyModal: React.FC<FacultyModalProps> = ({ faculty, onClose, setToastM
                         <div className="flex items-center space-x-4">
                             <img src={faculty.image} alt={faculty.name} className="w-24 h-24 rounded-full object-cover border-4 border-[var(--accent)]" />
                             <div>
-                                <h2 className="text-3xl font-bold text-[var(--text-primary)]">{faculty.name}</h2>
-                                <p className="text-lg text-[var(--accent)] font-semibold mt-1">{faculty.role}</p>
+                                <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{faculty.name}</h2>
+                                <p className="text-md sm:text-lg text-[var(--accent)] font-semibold mt-1">{faculty.role}</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -91,11 +91,11 @@ const FacultyModal: React.FC<FacultyModalProps> = ({ faculty, onClose, setToastM
             </div>
              <style>{`
                 @keyframes fade-in {
-                    from { opacity: 0; transform: scale(0.95); }
-                    to { opacity: 1; transform: scale(1); }
+                    from { opacity: 0; transform: scale(0.95) translateY(15px); }
+                    to { opacity: 1; transform: scale(1) translateY(0); }
                 }
                 .animate-fade-in {
-                    animation: fade-in 0.3s ease-out forwards;
+                    animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 }
             `}</style>
         </div>

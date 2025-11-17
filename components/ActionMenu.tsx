@@ -46,7 +46,7 @@ const ActionMenu: React.FC<ActionMenuProps> = ({ isAdmin, onLoginClick, onLogout
         <div className="relative" ref={menuRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110 hover:rotate-45"
                 aria-label="Open actions menu"
             >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ const ActionMenu: React.FC<ActionMenuProps> = ({ isAdmin, onLoginClick, onLogout
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg shadow-xl z-50 p-2">
+                <div className="absolute right-0 mt-2 w-56 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg shadow-xl z-50 p-2 animate-fade-in-up" style={{ animationDuration: '0.3s' }}>
                     <div className="p-2">
                          <p className="text-sm font-semibold text-[var(--text-secondary)] mb-2">Admin</p>
                          {isAdmin ? (
