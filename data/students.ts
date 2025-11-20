@@ -4,7 +4,7 @@ export const students: Student[] = [
     {
         name: 'AKHILESH U',
         register_number: '103CS23004',
-        avatar: 'https://i.postimg.cc/0Mm4fF5Y/akhilesh.jpg',
+        avatar: 'https://ik.imagekit.io/akhileshu/akhilesh.jpg',
         projects: [
             {
                 title: 'Personal Portfolio Website',
@@ -36,7 +36,7 @@ export const students: Student[] = [
     {
         name: 'AMITH',
         register_number: '103CS23005',
-        avatar: 'https://i.postimg.cc/wBypm2n9/amith.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/amith.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -53,19 +53,24 @@ export const students: Student[] = [
     {
         name: 'BASAVARAJ K LAMANI',
         register_number: '103CS23007',
-        avatar: 'https://i.postimg.cc/6pkrmMzj/basavaraj.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/basavaraj.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
                 description: 'A simple personal portfolio built to present student information, coursework, and skills clearly.',
                 link: 'https://basavaraj-red.vercel.app/'
+            },
+            {
+                title: 'Lakshman Stall Grocery Website',
+                description: 'A small business grocery website designed for product display, category browsing, and local store branding with a simple, friendly interface.',
+                link: 'https://lakshmanstall.vercel.app/'
             }
         ]
     },
     {
         name: 'D YASHWANTHA REDDY',
         register_number: '103CS23011',
-        avatar: 'https://i.postimg.cc/vmBWLgvr/yashwantha.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/yashwantha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -82,7 +87,7 @@ export const students: Student[] = [
     {
         name: 'YESHWANT RAO B',
         register_number: '103CS23062',
-        avatar: 'https://i.postimg.cc/XvgrkLPz/yeshwant.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/yeshwant.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -114,7 +119,7 @@ export const students: Student[] = [
     {
         name: 'TUSHAR',
         register_number: '103CS23055',
-        avatar: 'https://i.postimg.cc/RFgLx1VK/tushar.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/tushar.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -131,7 +136,7 @@ export const students: Student[] = [
     {
         name: 'A H HAMSAAS MAHMOOD',
         register_number: '103CS23001',
-        avatar: 'https://i.postimg.cc/hjLNL5sh/hamsaas.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/hamsaas.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -153,7 +158,7 @@ export const students: Student[] = [
     {
         name: 'AISHITHA RAI',
         register_number: '103CS23002',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -165,7 +170,7 @@ export const students: Student[] = [
     {
         name: 'AKASH',
         register_number: '103CS23003',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -177,7 +182,7 @@ export const students: Student[] = [
     {
         name: 'ANISH SHETTIGAR',
         register_number: '103CS23006',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -189,7 +194,7 @@ export const students: Student[] = [
     {
         name: 'BHAVEESH',
         register_number: '103CS23008',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -201,7 +206,7 @@ export const students: Student[] = [
     {
         name: 'CHAITHANYA',
         register_number: '103CS23009',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -213,7 +218,7 @@ export const students: Student[] = [
     {
         name: 'CHIRAG H P',
         register_number: '103CS23010',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -225,7 +230,7 @@ export const students: Student[] = [
     {
         name: 'DARSHAN POOJARY',
         register_number: '103CS23012',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -237,7 +242,7 @@ export const students: Student[] = [
     {
         name: 'DEEKSHA D',
         register_number: '103CS23013',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -249,7 +254,7 @@ export const students: Student[] = [
     {
         name: 'DHANVITH C V',
         register_number: '103CS23014',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -261,7 +266,7 @@ export const students: Student[] = [
     {
         name: 'DISHA G',
         register_number: '103CS23015',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -273,7 +278,7 @@ export const students: Student[] = [
     {
         name: 'DIVYASHREE',
         register_number: '103CS23016',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -285,7 +290,7 @@ export const students: Student[] = [
     {
         name: 'GAGAN',
         register_number: '103CS23017',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -297,7 +302,7 @@ export const students: Student[] = [
     {
         name: 'GANESH',
         register_number: '103CS23018',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -309,7 +314,7 @@ export const students: Student[] = [
     {
         name: 'HARINAKSHI',
         register_number: '103CS23019',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -321,7 +326,7 @@ export const students: Student[] = [
     {
         name: 'KAVANA',
         register_number: '103CS23020',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -333,7 +338,7 @@ export const students: Student[] = [
     {
         name: 'KAVYA',
         register_number: '103CS23021',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -345,7 +350,7 @@ export const students: Student[] = [
     {
         name: 'KHUSHI',
         register_number: '103CS23022',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -357,7 +362,7 @@ export const students: Student[] = [
     {
         name: 'KOUSHIK',
         register_number: '103CS23023',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -369,7 +374,7 @@ export const students: Student[] = [
     {
         name: 'KOUSHIK M',
         register_number: '103CS23024',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -381,7 +386,7 @@ export const students: Student[] = [
     {
         name: 'LAKSHMI',
         register_number: '103CS23025',
-        avatar: 'https://i.postimg.cc/SKs8wVx8/lakshmi.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/lakshmi.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -425,7 +430,7 @@ export const students: Student[] = [
     {
         name: 'MANASA R',
         register_number: '103CS23027',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -437,7 +442,7 @@ export const students: Student[] = [
     {
         name: 'MOHAMMAD HAIRAZ',
         register_number: '103CS23028',
-        avatar: 'https://i.postimg.cc/zXxZ24rw/hairaz.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/hairaz.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -454,7 +459,7 @@ export const students: Student[] = [
     {
         name: 'MOHAMMED RAYAAN',
         register_number: '103CS23029',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -466,7 +471,7 @@ export const students: Student[] = [
     {
         name: 'NAGACHAITHANYA',
         register_number: '103CS23031',
-        avatar: 'https://i.postimg.cc/W1z2HpQh/naga.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/naga.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -483,7 +488,7 @@ export const students: Student[] = [
     {
         name: 'NIKASH',
         register_number: '103CS23032',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -495,7 +500,7 @@ export const students: Student[] = [
     {
         name: 'NIKHIL',
         register_number: '103CS23033',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -507,7 +512,7 @@ export const students: Student[] = [
     {
         name: 'POOJARY ASMITHA',
         register_number: '103CS23035',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -519,7 +524,7 @@ export const students: Student[] = [
     {
         name: 'PEERMAHAMAD',
         register_number: '103CS23034',
-        avatar: 'https://i.postimg.cc/1XR7p5fx/peer.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/peer.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -536,7 +541,7 @@ export const students: Student[] = [
     {
         name: 'PRAJWAL',
         register_number: '103CS23036',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -548,7 +553,7 @@ export const students: Student[] = [
     {
         name: 'PRATHEEKSHA',
         register_number: '103CS23038',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -560,7 +565,7 @@ export const students: Student[] = [
     {
         name: 'RAMPRASAD B',
         register_number: '103CS23039',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -572,7 +577,7 @@ export const students: Student[] = [
     {
         name: 'RISHAB R SHETTY',
         register_number: '103CS23040',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -584,7 +589,7 @@ export const students: Student[] = [
     {
         name: 'SAMRADH B MALLI',
         register_number: '103CS23042',
-        avatar: 'https://i.postimg.cc/g09MgKnV/samradh.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/samradh.png',
         projects: [
             {
                 title: 'KPT Yoga Club Website',
@@ -606,7 +611,7 @@ export const students: Student[] = [
     {
         name: 'SANJANA S',
         register_number: '103CS23043',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -618,7 +623,7 @@ export const students: Student[] = [
     {
         name: 'SHAMITHA',
         register_number: '103CS23045',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -630,7 +635,7 @@ export const students: Student[] = [
     {
         name: 'SHANKAR',
         register_number: '103CS23046',
-        avatar: 'https://i.postimg.cc/jjLw85My/shankar.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/shankar.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -657,7 +662,7 @@ export const students: Student[] = [
     {
         name: 'SHREYA',
         register_number: '103CS23047',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -669,7 +674,7 @@ export const students: Student[] = [
     {
         name: 'SHUSHANTH K',
         register_number: '103CS23048',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -681,7 +686,7 @@ export const students: Student[] = [
     {
         name: 'SHYAMSHREE',
         register_number: '103CS23049',
-        avatar: 'https://i.postimg.cc/2j4q9g7g/shyam.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/shyam.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -703,7 +708,7 @@ export const students: Student[] = [
     {
         name: 'SRUJAN P',
         register_number: '103CS23050',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -715,7 +720,7 @@ export const students: Student[] = [
     {
         name: 'SUSHMITHA R D',
         register_number: '103CS23051',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -727,7 +732,7 @@ export const students: Student[] = [
     {
         name: 'SWATHI',
         register_number: '103CS23052',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -739,7 +744,7 @@ export const students: Student[] = [
     {
         name: 'TEJASHWINI Y ACHARYA',
         register_number: '103CS23053',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -751,7 +756,7 @@ export const students: Student[] = [
     {
         name: 'THRUSHA D',
         register_number: '103CS23054',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -763,7 +768,7 @@ export const students: Student[] = [
     {
         name: 'VARSHITHA',
         register_number: '103CS23056',
-        avatar: 'https://i.postimg.cc/7LD3Ct5p/varshitha.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/varshitha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -785,7 +790,7 @@ export const students: Student[] = [
     {
         name: 'VEEKSHA',
         register_number: '103CS23057',
-        avatar: 'https://i.postimg.cc/J7ypCgZZ/veeksha.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/veeksha.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -807,7 +812,7 @@ export const students: Student[] = [
     {
         name: 'VIDYASHREE R',
         register_number: '103CS23058',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -836,7 +841,7 @@ export const students: Student[] = [
     {
         name: 'VIKHYATH',
         register_number: '103CS23060',
-        avatar: 'https://i.postimg.cc/ZRWxZBBt/vikyath.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/vikyath.png',
         projects: [
             {
                 title: 'Resume Portfolio Website',
@@ -853,7 +858,7 @@ export const students: Student[] = [
     {
         name: 'YASHAS B',
         register_number: '103CS23061',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -865,7 +870,7 @@ export const students: Student[] = [
     {
         name: 'HARSHIKA',
         register_number: '103CS24703',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -911,7 +916,7 @@ export const students: Student[] = [
     {
         name: 'SANNIDHI',
         register_number: '103CS24706',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -923,7 +928,7 @@ export const students: Student[] = [
     {
         name: 'S SHIVANI',
         register_number: '124CS23045',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
