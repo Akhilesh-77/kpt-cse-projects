@@ -56,9 +56,9 @@ export const students: Student[] = [
         avatar: 'https://i.postimg.cc/6pkrmMzj/basavaraj.png',
         projects: [
             {
-                title: 'Lakshman Stall Grocery Website',
-                description: 'A digital showcase for a small grocery stall with organized product listing and clean UI meant for local business presence.',
-                link: 'https://lakshmanstall.vercel.app/'
+                title: 'Resume Portfolio Website',
+                description: 'A simple personal portfolio built to present student information, coursework, and skills clearly.',
+                link: 'https://basavaraj-red.vercel.app/'
             }
         ]
     },
@@ -403,12 +403,22 @@ export const students: Student[] = [
     {
         name: 'M Z ZAINUDDIN',
         register_number: '103CS23026',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/W4M472Y6/zain.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A clean and minimal personal resume website showcasing education, skills, and achievements.',
+                link: 'https://zainusportfolio.netlify.app/'
+            },
+            {
+                title: 'City Cable Website',
+                description: 'A simple service website representing City Cable, outlining plans, details, and contact info.',
+                link: 'https://citycable.netlify.app/'
+            },
+            {
+                title: 'KPT NCC Website',
+                description: 'A dedicated NCC page for KPT, displaying unit information, activities, and gallery content.',
+                link: 'https://kptnccweb.netlify.app/'
             }
         ]
     },
@@ -461,7 +471,12 @@ export const students: Student[] = [
             {
                 title: 'Resume Portfolio Website',
                 description: 'A neatly structured personal portfolio presenting education, skills, and achievements with a clean interface.',
-                link: 'https://portfolio-two-lac-14.vercel.a'
+                link: 'https://portfolio-two-lac-14.vercel.app'
+            },
+            {
+                title: 'Junior Technical School Website',
+                description: 'A school-themed demo website designed with simple navigation and neatly organized informational sections.',
+                link: 'https://junior-technical-school-l97z.onrender.com/'
             }
         ]
     },
@@ -804,12 +819,17 @@ export const students: Student[] = [
     {
         name: 'VIGHNESHA',
         register_number: '103CS23059',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/zXgYhxcK/vignesha.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A modern responsive personal portfolio highlighting skills, basic details, and project work.',
+                link: 'https://vighnesh-portfolio-eight.vercel.app/'
+            },
+            {
+                title: 'BCWDS Surathkal Website',
+                description: 'A clean informational website created for BCWDS Surathkal with service details and navigation.',
+                link: 'https://bcwdsurathkal.vercel.app/'
             }
         ]
     },
@@ -879,12 +899,12 @@ export const students: Student[] = [
     {
         name: 'PRAPTHI',
         register_number: '103CS24705',
-        avatar: 'https://i.postimg.cc/8zKc0cH4/user-image.png',
+        avatar: 'https://i.postimg.cc/RZwmkg7p/prapthi.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Resume Portfolio Website',
+                description: 'A structured resume-style personal portfolio with academic and skills sections.',
+                link: 'https://prapthi.vercel.app/'
             }
         ]
     },
