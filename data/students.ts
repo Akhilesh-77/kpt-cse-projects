@@ -31,6 +31,11 @@ export const students: Student[] = [
                 title: 'Junior Technology School (Demo Site)',
                 description: 'A demo educational website designed for junior students to explore tech subjects, featuring a friendly interface, simple navigation, and school-style elements.',
                 link: 'https://junior-tech-school.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -48,6 +53,11 @@ export const students: Student[] = [
                 title: 'Lakshman Stall Grocery Website',
                 description: 'A small business grocery website designed for product display, category browsing, and local store branding with a simple, friendly interface.',
                 link: 'https://lakshmanstall.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -110,6 +120,11 @@ export const students: Student[] = [
                 title: 'KPT Incubation Cell Website',
                 description: 'An informational website about KPT’s incubation cell, highlighting student innovation, startup ideas, and support ecosystem.',
                 link: 'https://kpt-incubation-cell.netlify.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -149,6 +164,11 @@ export const students: Student[] = [
                 title: 'Crust Restaurant Website',
                 description: 'A food ordering and restaurant branding website featuring menu categories and user-friendly navigation.',
                 link: 'https://food-del-nine-plum.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -439,6 +459,11 @@ export const students: Student[] = [
                 title: 'War Memorial of Martyrs (Near KPT)',
                 description: 'A respectful tribute website sharing information and visuals about the martyrs\' memorial near KPT.',
                 link: 'https://war-memorial1.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -478,6 +503,11 @@ export const students: Student[] = [
                 title: 'Government High School Nalyapadavu',
                 description: 'A school profile website providing basic info, departments, and updates.',
                 link: 'https://ghs-nalyapadavu.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -871,6 +901,11 @@ export const students: Student[] = [
                 title: 'War Memorial of Martyrs (Near KPT)',
                 description: 'A tribute website honoring the martyrs near KPT, featuring images, details, and respectful presentation of the memorial information.',
                 link: 'https://war-memorial1.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },
@@ -1044,6 +1079,11 @@ export const students: Student[] = [
                 title: 'Government High School Nalyapadavu',
                 description: 'A compact school website with essential information.',
                 link: 'https://ghs-nalyapadavu.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
             }
         ]
     },

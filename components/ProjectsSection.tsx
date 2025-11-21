@@ -50,11 +50,23 @@ const useCountUp = (end: number, duration: number = 1500) => {
 const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?: string; style?: React.CSSProperties; }> = ({ processedProject, className, style }) => {
     const { project, students } = processedProject;
     const isGroupProject = students.length > 1;
+    const isSpecialProject = project.title === 'Full Stack Development Lab Manual Website & Lab Manual';
+
+    const cardClasses = isSpecialProject
+        ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 ${className}`
+        : `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`;
+
+    // Merge custom styles with shadow color logic, ensuring special project shadow takes precedence in class
+    const combinedStyle = {
+        '--tw-shadow-color': 'var(--shadow-color)',
+        boxShadow: isSpecialProject ? undefined : '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)',
+        ...style
+    } as React.CSSProperties;
 
     return (
         <div 
-            className={`bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`}
-            style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)', ...style } as React.CSSProperties}
+            className={cardClasses}
+            style={combinedStyle}
         >
             <div>
                 <h4 className="text-xl font-bold text-[var(--accent)]">{project.title}</h4>
