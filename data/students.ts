@@ -929,7 +929,7 @@ export const students: Student[] = [
                 link: 'https://vighnesh-portfolio-eight.vercel.app/'
             },
             {
-                title: 'BCWDS Surathkal Website',
+                title: 'BCWD Surathkal Website',
                 description: 'A clean informational website created for BCWDS Surathkal with service details and navigation.',
                 link: 'https://bcwdsurathkal.vercel.app/'
             }
