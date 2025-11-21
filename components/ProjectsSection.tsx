@@ -139,7 +139,29 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
                 }
             });
         });
-        return Array.from(projectMap.values()).sort((a,b) => a.project.title.localeCompare(b.project.title));
+        
+        return Array.from(projectMap.values()).sort((a, b) => {
+            const titleA = a.project.title;
+            const titleB = b.project.title;
+
+            // Special ordering logic to keep Akhilesh U and Chaithanya together
+            // Swap 'Personal Portfolio Website' (Akhilesh) and 'Personal Resume Portfolio' (Samradh)
+            // so Akhilesh appears immediately before the 'Portfolio Website (Resume)' group.
+            if (titleA === 'Personal Portfolio Website' && titleB === 'Personal Resume Portfolio') return 1;
+            if (titleA === 'Personal Resume Portfolio' && titleB === 'Personal Portfolio Website') return -1;
+
+            const comparison = titleA.localeCompare(titleB);
+            if (comparison !== 0) return comparison;
+
+            // Within identical titles (specifically 'Portfolio Website (Resume)'), place Chaithanya first
+            const isChaithanyaA = a.students.some(s => s.name === 'CHAITHANYA');
+            const isChaithanyaB = b.students.some(s => s.name === 'CHAITHANYA');
+            
+            if (isChaithanyaA && !isChaithanyaB) return -1;
+            if (!isChaithanyaA && isChaithanyaB) return 1;
+
+            return 0;
+        });
     }, [students]);
 
     const projectCounts = useMemo(() => ({
