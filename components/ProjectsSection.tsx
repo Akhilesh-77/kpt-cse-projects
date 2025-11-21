@@ -80,8 +80,8 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
                     <p className="text-sm font-semibold text-[var(--text-primary)] mb-1">Created by:</p>
                     <div className="flex flex-wrap gap-2">
                         {students.map(s => (
-                            <div key={s.register_number} className="flex items-center bg-[var(--bg-tertiary)] rounded-full pr-3">
-                                <img src={s.avatar} alt={s.name} className="w-6 h-6 rounded-full object-cover" />
+                            <div key={s.register_number} className="flex items-center bg-[var(--bg-tertiary)] rounded-md pr-3 overflow-hidden">
+                                <img src={s.avatar} alt={s.name} className="w-6 h-6 object-contain bg-[var(--bg-secondary)]" />
                                 <span className="text-xs text-[var(--text-secondary)] ml-2">{s.name}</span>
                             </div>
                         ))}

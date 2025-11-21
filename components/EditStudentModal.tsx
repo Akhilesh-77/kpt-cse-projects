@@ -92,9 +92,9 @@ const EditStudentModal: React.FC<EditStudentModalProps> = ({ isOpen, onClose, on
                         <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
                             <div className="flex-shrink-0">
                                 <label htmlFor="avatar-upload-edit" className="cursor-pointer">
-                                    <div className="w-28 h-28 rounded-full bg-[var(--bg-tertiary)] border-2 border-dashed border-[var(--border-color)] flex items-center justify-center text-center text-xs text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition">
+                                    <div className="w-28 h-28 rounded-lg bg-[var(--bg-tertiary)] border-2 border-dashed border-[var(--border-color)] flex items-center justify-center text-center text-xs text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition overflow-hidden">
                                         {avatarPreview ? (
-                                            <img src={avatarPreview} alt="Avatar Preview" className="w-full h-full rounded-full object-cover" />
+                                            <img src={avatarPreview} alt="Avatar Preview" className="w-full h-full object-contain bg-[var(--bg-secondary)]" />
                                         ) : (
                                             <span>Click to Upload Photo</span>
                                         )}

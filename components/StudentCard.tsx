@@ -27,7 +27,7 @@ const StudentCard: React.FC<StudentCardProps> = ({ student, onSelect, className,
             <img 
                 src={student.avatar} 
                 alt={student.name} 
-                className="w-full h-40 object-cover group-hover:opacity-80 transition-opacity duration-300" 
+                className="w-full aspect-square object-contain bg-[var(--bg-tertiary)] group-hover:opacity-80 transition-opacity duration-300" 
             />
             <div className="p-4">
                 <h3 className="text-lg font-semibold text-[var(--text-primary)] truncate">{student.name}</h3>
