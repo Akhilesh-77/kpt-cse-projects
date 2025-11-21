@@ -1,3 +1,4 @@
+
 import { Student } from '../types';
 
 export const students: Student[] = [
@@ -202,12 +203,17 @@ export const students: Student[] = [
     {
         name: 'CHAITHANYA',
         register_number: '103CS23009',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/chaithanyaa.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A clean and simple personal resume-style portfolio website showcasing identity, skills, and basic information.',
+                link: 'https://chaithanya-ecru.vercel.app/'
+            },
+            {
+                title: 'Kadri Park Website',
+                description: 'An informational website designed for Kadri Park with a structured layout highlighting features and visuals.',
+                link: 'https://kadripark25.vercel.app/'
             }
         ]
     },
