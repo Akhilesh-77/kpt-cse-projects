@@ -55,11 +55,7 @@ export const students: Student[] = [
         register_number: '103CS23007',
         avatar: 'https://ik.imagekit.io/akhileshu/basavaraj.png',
         projects: [
-            {
-                title: 'Resume Portfolio Website',
-                description: 'A simple personal portfolio built to present student information, coursework, and skills clearly.',
-                link: 'https://basavaraj-red.vercel.app/'
-            },
+        
             {
                 title: 'Lakshman Stall Grocery Website',
                 description: 'A small business grocery website designed for product display, category browsing, and local store branding with a simple, friendly interface.',
@@ -324,24 +320,34 @@ export const students: Student[] = [
     {
         name: 'HARINAKSHI',
         register_number: '103CS23019',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/harinakshi.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume-style portfolio showcasing skills and academic details.',
+                link: 'https://harinakshi1.vercel.app'
+            },
+            {
+                title: 'Kadri Park Website',
+                description: 'A clean informational website about Kadri Park with images and basic details.',
+                link: 'https://kadripark25.vercel.app/'
             }
         ]
     },
     {
         name: 'KAVANA',
         register_number: '103CS23020',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/kavana.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume website with clean sections.',
+                link: 'https://kavana-portfolio.netlify.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A hotel booking platform with room listings and UI navigation.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
@@ -360,12 +366,17 @@ export const students: Student[] = [
     {
         name: 'KHUSHI',
         register_number: '103CS23022',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/khushi.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A resume website showcasing academic details and personal skills.',
+                link: 'https://khushi-portfolio-01.netlify.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A hotel reservation website built with simple and responsive UI.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
@@ -583,12 +594,17 @@ export const students: Student[] = [
     {
         name: 'PRATHEEKSHA',
         register_number: '103CS23038',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/pratheeksha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A structured portfolio with sections for profile, skills, and works.',
+                link: 'https://pratheekshapoojary.vercel.app/'
+            },
+            {
+                title: 'Kadri Park Website',
+                description: 'A static informational website presenting Kadri Park details.',
+                link: 'https://kadripark25.vercel.app/'
             }
         ]
     },
@@ -607,12 +623,22 @@ export const students: Student[] = [
     {
         name: 'RISHAB R SHETTY',
         register_number: '103CS23040',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/rishab.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal portfolio displaying skills, bio, and contact info.',
+                link: 'https://rishabshetty.vercel.app/'
+            },
+            {
+                title: 'KPT Yoga Website',
+                description: 'A yoga club website providing details, activities, and updates.',
+                link: 'https://kpt-yoga.vercel.app/'
+            },
+            {
+                title: 'Indian Oil Petroleum Website',
+                description: 'A service-based website representing Indian Oil station details.',
+                link: 'https://sapthagiri-enterprise-indianoil.vercel.app/'
             }
         ]
     },
@@ -789,24 +815,34 @@ export const students: Student[] = [
     {
         name: 'TEJASHWINI Y ACHARYA',
         register_number: '103CS23053',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/tejaswini.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A structured personal portfolio highlighting academic details.',
+                link: 'https://tejashwini-portfolio01.netlify.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A responsive hotel booking interface with simple navigation features.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
     {
         name: 'THRUSHA D',
         register_number: '103CS23054',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/thrusha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A simple resume portfolio featuring bio and achievements.',
+                link: 'https://portfolio1-ochre-alpha.vercel.app/about'
+            },
+            {
+                title: 'Government High School Nalyapadavu',
+                description: 'A basic school website with academic and general info.',
+                link: 'https://ghs-nalyapadavu.vercel.app/'
             }
         ]
     },
@@ -887,7 +923,7 @@ export const students: Student[] = [
                 link: 'https://vighnesh-portfolio-eight.vercel.app/'
             },
             {
-                title: 'BCWD Surathkal Website',
+                title: 'BCWDS Surathkal Website',
                 description: 'A clean informational website created for BCWDS Surathkal with service details and navigation.',
                 link: 'https://bcwdsurathkal.vercel.app/'
             }

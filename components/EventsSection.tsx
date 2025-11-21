@@ -98,17 +98,19 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
     useEffect(() => {
         const hasSeenHint = localStorage.getItem('hasSeenDoubleTapHint');
         if (!hasSeenHint) {
-            const timer = setTimeout(() => {
+            const showTimer = setTimeout(() => {
                 setShowHint(true);
                 localStorage.setItem('hasSeenDoubleTapHint', 'true');
                 
                 // Hide hint after 4 seconds
-                setTimeout(() => {
+                const hideTimer = setTimeout(() => {
                     setShowHint(false);
                 }, 4000);
+
+                return () => clearTimeout(hideTimer);
             }, 1500); // Delay appearance slightly
 
-            return () => clearTimeout(timer);
+            return () => clearTimeout(showTimer);
         }
     }, []);
 
@@ -193,8 +195,7 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
 
             {/* Subtle Double Tap Hint */}
             <div 
-                className={`fixed bottom-24 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white/90 text-[10px] font-medium px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-1000 z-20 ${showHint ? 'opacity-100' : 'opacity-0'}`}
-                style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                className={`fixed bottom-24 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md text-white text-xs font-medium px-4 py-2 rounded-full pointer-events-none transition-opacity duration-1000 ease-in-out z-50 shadow-lg ${showHint ? 'opacity-100' : 'opacity-0'}`}
             >
                 Double tap to like the post
             </div>
