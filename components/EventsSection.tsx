@@ -8,9 +8,16 @@ interface EventsSectionProps {
     onAddEventClick: () => void;
 }
 
+const ShareIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+    </svg>
+);
+
 const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
     const [stories, setStories] = useState<Event[]>(demoEvents);
     const [activeStoryIndex, setActiveStoryIndex] = useState<number | null>(null);
+    const [showHint, setShowHint] = useState(false);
 
     const handleOpenStory = (index: number) => {
         setActiveStoryIndex(index);
@@ -69,9 +76,44 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [handleViewPost]); // Run only on mount to check initial URL
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'KPT CSE Events',
+            text: 'Check out the latest events from the CSE Department.',
+            url: `${window.location.origin}/#events`,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.log('Share action was cancelled or failed.', error);
+            }
+        } else {
+            alert('Sharing is not supported on this browser.');
+        }
+    };
+
+    // Effect for first-time double tap hint
+    useEffect(() => {
+        const hasSeenHint = localStorage.getItem('hasSeenDoubleTapHint');
+        if (!hasSeenHint) {
+            const timer = setTimeout(() => {
+                setShowHint(true);
+                localStorage.setItem('hasSeenDoubleTapHint', 'true');
+                
+                // Hide hint after 4 seconds
+                setTimeout(() => {
+                    setShowHint(false);
+                }, 4000);
+            }, 1500); // Delay appearance slightly
+
+            return () => clearTimeout(timer);
+        }
+    }, []);
 
     return (
-        <section className="container mx-auto px-0 sm:px-6 lg:px-8 py-8">
+        <section className="container mx-auto px-0 sm:px-6 lg:px-8 py-8 relative">
             <style>{`
                 .hide-scrollbar::-webkit-scrollbar {
                     display: none;
@@ -82,16 +124,28 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
                 }
             `}</style>
             
+            {/* Page Title & Share */}
+            <div className="flex items-center gap-3 px-4 sm:px-0 mb-8 opacity-0 animate-fade-in-up">
+                <h1 className="text-3xl sm:text-4xl font-bold text-[var(--text-secondary)]">Events</h1>
+                <button 
+                    onClick={handleShare}
+                    className="p-2 rounded-full hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]" 
+                    aria-label="Share Events Page"
+                >
+                    <ShareIcon />
+                </button>
+            </div>
+
             {/* Event Stories */}
             <div className="mb-12 px-4 sm:px-0">
-                <h2 className="text-2xl font-bold text-[var(--text-secondary)] mb-4 opacity-0 animate-fade-in-up">Stories</h2>
+                <h2 className="text-2xl font-bold text-[var(--text-secondary)] mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>Stories</h2>
                 <div className="flex space-x-4 overflow-x-auto pb-4 hide-scrollbar">
                     {stories.map((story, index) => (
                         <div
                             key={story.id}
                             onClick={() => handleOpenStory(index)}
                             className="flex-shrink-0 w-28 h-40 rounded-xl overflow-hidden cursor-pointer relative group transform transition-transform duration-300 hover:scale-105 opacity-0 animate-fade-in-up"
-                            style={{ animationDelay: `${index * 100}ms` }}
+                            style={{ animationDelay: `${(index * 100) + 200}ms` }}
                         >
                             <img src={story.images[0]} alt={story.title} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -136,6 +190,14 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
             >
                 +
             </button>
+
+            {/* Subtle Double Tap Hint */}
+            <div 
+                className={`fixed bottom-24 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white/90 text-[10px] font-medium px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-1000 z-20 ${showHint ? 'opacity-100' : 'opacity-0'}`}
+                style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+            >
+                Double tap to like the post
+            </div>
         </section>
     );
 };

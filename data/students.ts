@@ -925,7 +925,7 @@ export const students: Student[] = [
     {
         name: 'HARSHIKA',
         register_number: '103CS24703',
-        avatar: 'https://ik.imagekit.io/akhileshu/harshika.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/harshikaa.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
@@ -975,6 +975,16 @@ export const students: Student[] = [
                 title: 'Resume Portfolio Website',
                 description: 'A structured resume-style personal portfolio with academic and skills sections.',
                 link: 'https://prapthi.vercel.app/'
+            },
+            {
+                title: 'IT Skill Lab Manual',
+                description: 'An online IT Skill Lab manual with neatly arranged topics.',
+                link: 'https://itskillmanual.vercel.app/'
+            },
+            {
+                title: 'Shri Bhadrakali Temple',
+                description: 'A website highlighting details and visuals of Shri Bhadrakali Temple.',
+                link: 'https://bhadrakalitemple.vercel.app/'
             }
         ]
     },
