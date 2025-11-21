@@ -158,24 +158,24 @@ export const students: Student[] = [
     {
         name: 'AISHITHA RAI',
         register_number: '103CS23002',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/aishitha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal portfolio displaying details, skills, and projects.',
+                link: 'https://aishii09.github.io/portfolio1/'
             }
         ]
     },
     {
         name: 'AKASH',
         register_number: '103CS23003',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/akash.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A resume-oriented personal website with clean layout.',
+                link: 'https://akashpoojary.netlify.app/'
             }
         ]
     },
@@ -242,12 +242,17 @@ export const students: Student[] = [
     {
         name: 'DEEKSHA D',
         register_number: '103CS23013',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/deeksha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A minimal personal resume website with clean layout and sections.',
+                link: 'https://deeksha-seven.vercel.app/'
+            },
+            {
+                title: 'Kadri Park Website',
+                description: 'An informational website showcasing details about Kadri Park with images and navigation.',
+                link: 'https://kadripark25.vercel.app/'
             }
         ]
     },
@@ -266,24 +271,29 @@ export const students: Student[] = [
     {
         name: 'DISHA G',
         register_number: '103CS23015',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/disha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A basic portfolio giving skill and personal details.',
+                link: 'https://dishaa-one.vercel.app/'
             }
         ]
     },
     {
         name: 'DIVYASHREE',
         register_number: '103CS23016',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/divya.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A structured personal portfolio with details, sections, and modern design.',
+                link: 'https://divya-poojary.vercel.app/'
+            },
+            {
+                title: 'Kadri Park Website',
+                description: 'A clean static website highlighting attractions of Kadri Park.',
+                link: 'https://kadripark25.vercel.app/'
             }
         ]
     },
@@ -374,12 +384,22 @@ export const students: Student[] = [
     {
         name: 'KOUSHIK M',
         register_number: '103CS23024',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/koushikm.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A portfolio showcasing skills and achievements.',
+                link: 'https://koushikmportfolie.vercel.app/'
+            },
+            {
+                title: 'KPT Auto Park',
+                description: 'A website giving details about KPT Auto Park.',
+                link: 'https://pathfind3er.github.io/kptautopark/'
+            },
+            {
+                title: 'Luxury Autos on Rent',
+                description: 'A vehicle rental service website.',
+                link: 'https://auto-rental-kpt.vercel.app/'
             }
         ]
     },
@@ -430,12 +450,17 @@ export const students: Student[] = [
     {
         name: 'MANASA R',
         register_number: '103CS23027',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/manasa.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A portfolio site built to display skills, achievements, and personal info.',
+                link: 'https://manasa-portfolio-psi.vercel.app/'
+            },
+            {
+                title: 'Government High School Nalyapadavu',
+                description: 'A school profile website providing basic info, departments, and updates.',
+                link: 'https://ghs-nalyapadavu.vercel.app/'
             }
         ]
     },
@@ -541,12 +566,17 @@ export const students: Student[] = [
     {
         name: 'PRAJWAL',
         register_number: '103CS23036',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/prajwal.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A simple portfolio designed to display personal details.',
+                link: 'https://prajwal01-portfolio.netlify.app/'
+            },
+            {
+                title: 'Lakshman Grocery Stall',
+                description: 'A business website for Lakshman Stall.',
+                link: 'https://lakshmanstall.vercel.app/'
             }
         ]
     },
@@ -720,24 +750,39 @@ export const students: Student[] = [
     {
         name: 'SUSHMITHA R D',
         register_number: '103CS23051',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/sushmitha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A structured resume website highlighting education and skills.',
+                link: 'https://sushmitha-portfolio-amber.vercel.app/'
+            },
+            {
+                title: 'IT Skill Lab Manual',
+                description: 'A digital IT Skill Lab Manual with simple design.',
+                link: 'https://itskillmanual.vercel.app/'
             }
         ]
     },
     {
         name: 'SWATHI',
         register_number: '103CS23052',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/swathi.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A portfolio showcasing academic and personal info.',
+                link: 'https://swathi-teal.vercel.app/'
+            },
+            {
+                title: 'IT Skill Lab Manual',
+                description: 'Online version of the IT Skill Lab Manual.',
+                link: 'https://itskillmanual.vercel.app/'
+            },
+            {
+                title: 'Shri Bhadrakali Temple',
+                description: 'A simple temple website with images.',
+                link: 'https://bhadrakalitemple.vercel.app/'
             }
         ]
     },
@@ -812,12 +857,22 @@ export const students: Student[] = [
     {
         name: 'VIDYASHREE R',
         register_number: '103CS23058',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/vidyashree.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A modern styled resume website with essential personal and academic info.',
+                link: 'https://vidzs.netlify.app/'
+            },
+            {
+                title: 'IT Skill Lab Manual',
+                description: 'A digital IT Skill Lab manual designed for easy reading.',
+                link: 'https://itskillmanual.vercel.app/'
+            },
+            {
+                title: 'Shri Bhadrakali Temple',
+                description: 'A website showcasing Shri Bhadrakali Temple details.',
+                link: 'https://bhadrakalitemple.vercel.app/'
             }
         ]
     },
@@ -870,12 +925,22 @@ export const students: Student[] = [
     {
         name: 'HARSHIKA',
         register_number: '103CS24703',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/harshika.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A simple resume portfolio displaying education, projects, and skills.',
+                link: 'https://hrshy.netlify.app/'
+            },
+            {
+                title: 'IT Skill Lab Manual',
+                description: 'An online IT Skill Lab manual with neatly arranged topics.',
+                link: 'https://itskillmanual.vercel.app/'
+            },
+            {
+                title: 'Shri Bhadrakali Temple',
+                description: 'A website highlighting details and visuals of Shri Bhadrakali Temple.',
+                link: 'https://bhadrakalitemple.vercel.app/'
             }
         ]
     },
@@ -916,24 +981,29 @@ export const students: Student[] = [
     {
         name: 'SANNIDHI',
         register_number: '103CS24706',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/sannidhi.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A clean resume portfolio featuring profile, skills, and achievements.',
+                link: 'https://sn19-portfolio.vercel.app/'
+            },
+            {
+                title: 'Government High School Nalyapadavu',
+                description: 'A compact school website with essential information.',
+                link: 'https://ghs-nalyapadavu.vercel.app/'
             }
         ]
     },
     {
         name: 'S SHIVANI',
         register_number: '124CS23045',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/shivani.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A simple responsive portfolio showing academic details, skills, and personal profile.',
+                link: 'https://shivani01-portfolio.netlify.app/'
             }
         ]
     }
