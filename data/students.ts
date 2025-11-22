@@ -730,12 +730,22 @@ export const students: Student[] = [
     {
         name: 'SHAMITHA',
         register_number: '103CS23045',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/shamitha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal portfolio website showcasing academic information, skills, and profile.',
+                link: 'https://shamithamendon.vercel.app/'
+            },
+            {
+                title: 'Hotel Mandara',
+                description: 'A clean informational website for Hotel Mandara featuring details and layout.',
+                link: 'https://mandarahotel-kpt.vercel.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A hotel booking interface that allows users to explore rooms and book stays.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
