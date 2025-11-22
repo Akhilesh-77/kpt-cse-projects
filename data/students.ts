@@ -252,12 +252,12 @@ export const students: Student[] = [
     {
         name: 'DARSHAN POOJARY',
         register_number: '103CS23012',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/darshan.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Hotel Mane Uta',
+                description: 'A restaurant website built for the Mane Uta hotel featuring menu and contact details.',
+                link: 'https://mane-uta-seven.vercel.app/contact'
             }
         ]
     },
@@ -380,12 +380,17 @@ export const students: Student[] = [
     {
         name: 'KAVYA',
         register_number: '103CS23021',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/kavya.jpg',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume portfolio showcasing education, skills, and profile details.',
+                link: 'https://kavyaportfolio123.netlify.app'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A hotel booking website allowing users to explore rooms and make reservations with clean UI.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
@@ -584,12 +589,22 @@ export const students: Student[] = [
     {
         name: 'POOJARY ASMITHA',
         register_number: '103CS23035',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/asmitha.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A minimal and clean resume portfolio showing academic details and skills.',
+                link: 'https://asmithapoojaryportfolio.vercel.app/'
+            },
+            {
+                title: 'Hotel Mandara',
+                description: 'A hotel website providing details about Mandara hotel with images and information.',
+                link: 'https://mandarahotel-kpt.vercel.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A simple and responsive hotel booking application.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },
@@ -754,12 +769,22 @@ export const students: Student[] = [
     {
         name: 'SHREYA',
         register_number: '103CS23047',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/shreya.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal portfolio created to display identity, skills, and achievements.',
+                link: 'https://shreyaportfolio-five.vercel.app'
+            },
+            {
+                title: 'Hotel Mandara',
+                description: 'A website offering details and visual presentation of Mandara Hotel.',
+                link: 'https://mandarahotel-kpt.vercel.app/'
+            },
+            {
+                title: 'QUICK STAY – Hotel Booking Website',
+                description: 'A hotel booking platform with room listings and booking features.',
+                link: 'https://hb-gs.vercel.app/'
             }
         ]
     },

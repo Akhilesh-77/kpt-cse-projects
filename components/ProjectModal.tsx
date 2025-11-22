@@ -10,7 +10,7 @@ interface ProjectModalProps {
     setToastMessage?: (message: string | null) => void;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, onEdit, onDelete }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, onEdit, onDelete, setToastMessage }) => {
     useEffect(() => {
         const handleEsc = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
@@ -24,6 +24,34 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
     }, [onClose]);
 
     if (!student) return null;
+
+    const handleShare = async () => {
+        const shareUrl = `${window.location.origin}/student/${student.register_number}`;
+        const shareData = {
+            title: `KPT CSE Project Showcase: ${student.name}`,
+            text: `Check out ${student.name}'s projects on the KPT CSE Showcase!`,
+            url: shareUrl,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.log('Share cancelled or failed', error);
+            }
+        } else {
+            try {
+                await navigator.clipboard.writeText(shareUrl);
+                if (setToastMessage) {
+                    setToastMessage('Link copied to clipboard!');
+                } else {
+                    alert('Link copied to clipboard!');
+                }
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+    };
 
     return (
         <div
@@ -70,6 +98,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
                                     </button>
                                 </>
                             )}
+                            <button
+                                onClick={handleShare}
+                                className="p-2 text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--bg-tertiary)] rounded-full transition-all duration-300"
+                                title="Share Student Profile"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                                </svg>
+                            </button>
                             <button
                                 onClick={onClose}
                                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
