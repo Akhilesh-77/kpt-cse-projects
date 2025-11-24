@@ -1133,5 +1133,22 @@ export const students: Student[] = [
                 link: 'https://shivani01-portfolio.netlify.app/'
             }
         ]
+    },
+    {
+        name: 'Shushanth K',
+        register_number: '103CS23048',
+        avatar: 'https://ik.imagekit.io/akhileshu/image.png',
+        projects: [
+            {
+                title: 'Portfolio Website (Resume)',
+                description: 'A personal resume-style portfolio site displaying skills, profile details, and contact info.',
+                link: 'https://shushanthportfolio.vercel.app/'
+            },
+            {
+                title: 'Hotel Mane Uta',
+                description: 'A restaurant website created for Mane Uta, showcasing menu, details, and contact section.',
+                link: 'https://mane-uta-seven.vercel.app/contact'
+            }
+        ]
     }
 ];
