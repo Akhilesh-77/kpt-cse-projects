@@ -224,14 +224,14 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Bhaveesh',
+        name: 'BHAVEESH',
         register_number: '103CS23008',
         avatar: 'https://ik.imagekit.io/akhileshu/BHAVEESH.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A personal resume-style portfolio showcasing student details, skills, and contact info.',
-                link: ''
+                title: 'FRUMIXX – Juices and Hotel Website',
+                description: 'A hotel and juice-center website created with clean UI.',
+                link: 'https://frumixx.netlify.app/'
             }
         ]
     },
