@@ -1,4 +1,5 @@
 
+
 import { Student } from '../types';
 
 export const students: Student[] = [
@@ -193,18 +194,33 @@ export const students: Student[] = [
                 title: 'Portfolio Website (Resume)',
                 description: 'A resume-oriented personal website with clean layout.',
                 link: 'https://akashpoojary.netlify.app/'
+            },
+            {
+                title: 'KPT Auto Park',
+                description: 'A parking management web portal for KPT.',
+                link: 'https://pathfind3er.github.io/kptautopark/'
+            },
+            {
+                title: 'KPT Auto Rental',
+                description: 'A website for renting premium vehicles from KPT.',
+                link: 'https://auto-rental-kpt.vercel.app/'
             }
         ]
     },
     {
         name: 'ANISH SHETTIGAR',
         register_number: '103CS23006',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/anish.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A portfolio website displaying personal skills and identity.',
+                link: 'https://anishshettigar-portfolio.vercel.app/'
+            },
+            {
+                title: 'KPT Auto Park',
+                description: 'A system displaying parking records of KPT.',
+                link: 'https://pathfind3er.github.io/kptautopark/'
             }
         ]
     },
@@ -281,12 +297,17 @@ export const students: Student[] = [
     {
         name: 'DHANVITH C V',
         register_number: '103CS23014',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/dhanvith.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'Online resume showcasing skills and profile details.',
+                link: 'https://dhanvith.netlify.app/'
+            },
+            {
+                title: 'FRUMIXX – Juices & Hotel Website',
+                description: 'A business website built for FRUMIXX hotel and juice center.',
+                link: 'https://frumixx.netlify.app/'
             }
         ]
     },
@@ -414,12 +435,17 @@ export const students: Student[] = [
     {
         name: 'KOUSHIK',
         register_number: '103CS23023',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/koushik.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A simple resume-style personal portfolio.',
+                link: 'https://koushik-portfolio1.vercel.app/'
+            },
+            {
+                title: 'KPT Youth Red Cross Website',
+                description: 'A website created for the Youth Red Cross unit of KPT.',
+                link: 'https://youth-red-cross.vercel.app'
             }
         ]
     },
@@ -565,24 +591,34 @@ export const students: Student[] = [
     {
         name: 'NIKASH',
         register_number: '103CS23032',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/nikash.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume-style portfolio showcasing skills and details.',
+                link: 'https://nikash01.netlify.app/'
+            },
+            {
+                title: 'KPT Youth Red Cross Website',
+                description: 'A website created for the Youth Red Cross unit of KPT.',
+                link: 'https://youth-red-cross.vercel.app'
             }
         ]
     },
     {
         name: 'NIKHIL',
         register_number: '103CS23033',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/nikhil.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume portfolio website.',
+                link: 'https://portfolio-nikil-three.vercel.app/'
+            },
+            {
+                title: 'Indian Oil Petroleum Website',
+                description: 'A website built for Sapthagiri Enterprise Indian Oil.',
+                link: 'https://sapthagiri-enterprise-indianoil.vercel.app/'
             }
         ]
     },
@@ -662,12 +698,12 @@ export const students: Student[] = [
     {
         name: 'RAMPRASAD B',
         register_number: '103CS23039',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/ramprasad.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'Hotel Mane Uta',
+                description: 'A website for the Mane Uta hotel showcasing menu and info.',
+                link: 'https://mane-uta-seven.vercel.app/'
             }
         ]
     },
@@ -798,18 +834,7 @@ export const students: Student[] = [
             }
         ]
     },
-    {
-        name: 'SHUSHANTH K',
-        register_number: '103CS23048',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
-        projects: [
-            {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
-            }
-        ]
-    },
+    
     {
         name: 'SHYAMSHREE',
         register_number: '103CS23049',
@@ -835,12 +860,22 @@ export const students: Student[] = [
     {
         name: 'SRUJAN P',
         register_number: '103CS23050',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/srujan.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A resume portfolio site showing skills and information.',
+                link: 'https://srujan01-portfolio.netlify.app/'
+            },
+            {
+                title: 'Indian Oil Petroleum Website',
+                description: 'A website created for Sapthagiri Enterprise Indian Oil.',
+                link: 'https://sapthagiri-enterprise-indianoil.vercel.app/'
+            },
+            {
+                title: 'KPT Yoga Club',
+                description: 'A website for the KPT Yoga Club with sections and details.',
+                link: 'https://kpt-yoga.vercel.app/#home'
             }
         ]
     },
@@ -1025,12 +1060,17 @@ export const students: Student[] = [
     {
         name: 'YASHAS B',
         register_number: '103CS23061',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/yashas.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A resume-style personal portfolio website.',
+                link: 'https://yashas-portfolio.vercel.app/'
+            },
+            {
+                title: 'KPT Auto Park',
+                description: 'A digital platform showing vehicle parking data at KPT.',
+                link: 'https://pathfind3er.github.io/kptautopark/'
             }
         ]
     },
@@ -1135,18 +1175,18 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Shushanth K',
+        name: 'SHUSHANTH K',
         register_number: '103CS23048',
         avatar: 'https://ik.imagekit.io/akhileshu/image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A personal resume-style portfolio site displaying skills, profile details, and contact info.',
+                description: 'A personal resume-style portfolio website showcasing profile, skills, and contact details.',
                 link: 'https://shushanthportfolio.vercel.app/'
             },
             {
                 title: 'Hotel Mane Uta',
-                description: 'A restaurant website created for Mane Uta, showcasing menu, details, and contact section.',
+                description: 'A restaurant website for Mane Uta displaying menu, information, and contact section.',
                 link: 'https://mane-uta-seven.vercel.app/contact'
             }
         ]
