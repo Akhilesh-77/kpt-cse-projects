@@ -225,13 +225,13 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'BHAVEESH',
+        name: 'Bhaveesh',
         register_number: '103CS23008',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/BHAVEESH.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
+                description: 'A personal resume-style portfolio showcasing student details, skills, and contact info.',
                 link: ''
             }
         ]
@@ -254,14 +254,14 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'CHIRAG H P',
+        name: 'Chirag H P',
         register_number: '103CS23010',
         avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'FRUMIXX – Juices and Hotel Website',
+                description: 'A hotel and juice-center website created with clean UI.',
+                link: 'https://frumixx.netlify.app/'
             }
         ]
     },
@@ -341,26 +341,31 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'GAGAN',
+        name: 'Gagan',
         register_number: '103CS23017',
         avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'FRUMIXX – Juices and Hotel Website',
+                description: 'A business website designed for FRUMIXX juice and hotel services.',
+                link: 'https://frumixx.netlify.app/'
             }
         ]
     },
     {
-        name: 'GANESH',
+        name: 'Ganesh',
         register_number: '103CS23018',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/ganesh.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A portfolio website displaying skills, identity, and academic details.',
+                link: 'https://ganesh-portfolio-woad.vercel.app/'
+            },
+            {
+                title: 'BCWD Surathkal Hostel',
+                description: 'A hostel information portal created for BCWD Surathkal students.',
+                link: 'https://bcwdsurathkal.vercel.app/'
             }
         ]
     },
@@ -752,14 +757,19 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'SANJANA S',
+        name: 'Sanjana S',
         register_number: '103CS23043',
         avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                description: 'A personal resume portfolio website.',
+                link: 'https://sanjana-s-sanju.vercel.app/'
+            },
+            {
+                title: 'Hotel Mandara',
+                description: 'A hotel information website featuring Mandara hotel details and photos.',
+                link: 'https://mandarahotel-kpt.vercel.app/'
             }
         ]
     },
