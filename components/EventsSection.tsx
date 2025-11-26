@@ -56,7 +56,7 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
         if (!hash.includes('#events')) return;
 
         const queryString = hash.split('?')[1];
-        if (!queryString) return; // FIX: Prevent error if hash has no query string
+        if (!queryString) return;
 
         const params = new URLSearchParams(queryString);
         const storyId = params.get('event');
@@ -98,19 +98,21 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
     useEffect(() => {
         const hasSeenHint = localStorage.getItem('hasSeenDoubleTapHint');
         if (!hasSeenHint) {
+            let hideTimer: number;
             const showTimer = setTimeout(() => {
                 setShowHint(true);
                 localStorage.setItem('hasSeenDoubleTapHint', 'true');
                 
                 // Hide hint after 4 seconds
-                const hideTimer = setTimeout(() => {
+                hideTimer = window.setTimeout(() => {
                     setShowHint(false);
                 }, 4000);
+            }, 1000); // Delay appearance slightly
 
-                return () => clearTimeout(hideTimer);
-            }, 1500); // Delay appearance slightly
-
-            return () => clearTimeout(showTimer);
+            return () => {
+                clearTimeout(showTimer);
+                clearTimeout(hideTimer);
+            };
         }
     }, []);
 
@@ -193,9 +195,9 @@ const EventsSection: React.FC<EventsSectionProps> = ({ onAddEventClick }) => {
                 +
             </button>
 
-            {/* Subtle Double Tap Hint */}
+            {/* One-time Guidance Message */}
             <div 
-                className={`fixed bottom-24 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md text-white text-xs font-medium px-4 py-2 rounded-full pointer-events-none transition-opacity duration-1000 ease-in-out z-50 shadow-lg ${showHint ? 'opacity-100' : 'opacity-0'}`}
+                className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md text-white text-xl sm:text-2xl font-bold px-8 py-5 rounded-2xl pointer-events-none transition-all duration-700 ease-in-out z-50 shadow-2xl border border-white/10 ${showHint ? 'opacity-100 scale-100' : 'opacity-0 scale-90 translate-y-4'}`}
             >
                 Double tap to like the post
             </div>

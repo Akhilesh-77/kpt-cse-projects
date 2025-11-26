@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Student, Project } from '../types';
 
@@ -74,6 +73,7 @@ const AddProjectModal: React.FC<AddProjectModalProps> = ({ isOpen, onClose, onAd
         };
 
         // WhatsApp Integration
+        // Using '91' for India as KPT is in India, and the number provided was 6363027032.
         const phoneNumber = '916363027032';
         let whatsappMessage = `*New Project Submission*\n\n`;
         whatsappMessage += `*Student Name:* ${name.trim()}\n`;
@@ -156,4 +156,3 @@ const AddProjectModal: React.FC<AddProjectModalProps> = ({ isOpen, onClose, onAd
 };
 
 export default AddProjectModal;
-    

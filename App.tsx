@@ -175,29 +175,30 @@ const App: React.FC = () => {
     };
 
     const handleAddProject = (newStudent: Student) => {
-        // Check if student already exists by register number
-        const existingStudentIndex = students.findIndex(s => s.register_number === newStudent.register_number);
+        let isExisting = false;
         
-        if (existingStudentIndex >= 0) {
-            // If student exists, add projects to existing student
-            // NOTE: The prompt says "Do NOT overwrite any existing data". This usually means appending.
-            setStudents(prevStudents => {
+        setStudents(prevStudents => {
+            const index = prevStudents.findIndex(s => s.register_number === newStudent.register_number);
+            
+            if (index >= 0) {
+                isExisting = true;
                 const updatedStudents = [...prevStudents];
-                const existingStudent = updatedStudents[existingStudentIndex];
-                
-                // Add new projects to existing list
-                updatedStudents[existingStudentIndex] = {
-                    ...existingStudent,
-                    projects: [...existingStudent.projects, ...newStudent.projects]
+                updatedStudents[index] = {
+                    ...updatedStudents[index],
+                    projects: [...updatedStudents[index].projects, ...newStudent.projects]
                 };
                 return updatedStudents;
-            });
-            setToastMessage('Projects added to existing student profile!');
-        } else {
-            // New student
-            setStudents(prevStudents => [...prevStudents, newStudent]);
-            setToastMessage('New student profile created with projects!');
-        }
+            } else {
+                isExisting = false;
+                return [...prevStudents, newStudent];
+            }
+        });
+
+        // Use setTimeout to ensure toast message logic runs after state update logic initiates,
+        // though strictly 'isExisting' inside the setter won't leak out.
+        // We re-check existence in current state to set message correctly immediately.
+        const exists = students.some(s => s.register_number === newStudent.register_number);
+        setToastMessage(exists ? 'Projects added to existing student profile!' : 'New student profile created with projects!');
         setAddProjectModalOpen(false);
     };
     
@@ -378,7 +379,7 @@ const App: React.FC = () => {
             <AddEventModal
                 isOpen={isAddEventModalOpen}
                 onClose={() => setAddEventModalOpen(false)}
-                setToastMessage={setToastMessage}
+                setToastMessage={(msg) => setToastMessage(msg || '')}
             />
 
             <AddProjectModal

@@ -1,4 +1,5 @@
 
+
 export interface Project {
   title: string;
   description: string;
@@ -30,6 +31,6 @@ export interface Event {
   timestamp: string;
 }
 
-export type Theme = 'black' | 'white' | 'pink' | 'yellow';
+export type Theme = 'black' | 'white' | 'pink' | 'yellow' | 'rainbow';
 
 export type SortOption = 'name-asc' | 'name-desc' | 'reg-asc' | 'reg-desc' | 'latest-asc' | 'projects-desc';

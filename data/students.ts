@@ -25,7 +25,7 @@ export const students: Student[] = [
                 link: 'https://image-prompt-ten.vercel.app/'
             },
             {
-                title: 'KPT Finance Management App',
+                title: 'KPT Finance Management App 💎',
                 description: 'A practical application built for managing KPT society budgets with income tracking, expense categorization, and easy-to-read dashboards.',
                 link: 'https://kpt-society-budget-app.vercel.app/'
             },
@@ -40,7 +40,7 @@ export const students: Student[] = [
                 link: 'https://fullstack-labmanual.vercel.app/'
             },
             {
-                title: 'KPT Mangalore College Website',
+                title: 'KPT Mangalore College Website 💎',
                 description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
                 link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
                 contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
@@ -1290,7 +1290,7 @@ export const students: Student[] = [
                 link: 'https://fullstack-labmanual.vercel.app/'
             },
             {
-                title: 'KPT Mangalore College Website',
+                title: 'KPT Mangalore College Website 💎',
                 description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
                 link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
                 contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'

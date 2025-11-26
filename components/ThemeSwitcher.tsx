@@ -31,12 +31,26 @@ const LightbulbIcon = () => (
     </svg>
 );
 
+const RainbowIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="rainbowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: '#38bdf8', stopOpacity: 1 }} />
+                <stop offset="50%" style={{ stopColor: '#818cf8', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: '#f472b6', stopOpacity: 1 }} />
+            </linearGradient>
+        </defs>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="url(#rainbowGradient)" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+    </svg>
+);
+
 // FIX: Use React.ReactElement to avoid issues with the global JSX namespace.
 const themes: { name: Theme; icon: React.ReactElement }[] = [
     { name: 'black', icon: <MoonIcon /> },
     { name: 'white', icon: <SunIcon /> },
     { name: 'pink', icon: <SparklesIcon /> },
     { name: 'yellow', icon: <LightbulbIcon /> },
+    { name: 'rainbow', icon: <RainbowIcon /> },
 ];
 
 const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ currentTheme, setTheme }) => {
@@ -52,7 +66,8 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ currentTheme, setTheme })
         <button
             onClick={cycleTheme}
             className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110 hover:-rotate-12"
-            aria-label="Switch theme"
+            aria-label={`Switch theme (Current: ${currentTheme})`}
+            title={`Switch Theme: ${currentTheme}`}
         >
             {currentIcon}
         </button>
