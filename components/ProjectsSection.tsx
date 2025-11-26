@@ -51,15 +51,18 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
     const { project, students } = processedProject;
     const isGroupProject = students.length > 1;
     const isSpecialProject = project.title === 'Full Stack Development Lab Manual Website & Lab Manual';
+    const isOfficialProject = project.title === 'KPT Mangalore College Website';
 
     const cardClasses = isSpecialProject
         ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 ${className}`
-        : `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`;
+        : isOfficialProject
+            ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[var(--accent)] shadow-[0_0_15px_var(--shadow-color)] hover:shadow-[0_0_25px_var(--shadow-color)] transition-all duration-300 ${className}`
+            : `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`;
 
-    // Merge custom styles with shadow color logic, ensuring special project shadow takes precedence in class
+    // Merge custom styles with shadow color logic, ensuring special/official project shadow takes precedence in class
     const combinedStyle = {
         '--tw-shadow-color': 'var(--shadow-color)',
-        boxShadow: isSpecialProject ? undefined : '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)',
+        boxShadow: (isSpecialProject || isOfficialProject) ? undefined : '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)',
         ...style
     } as React.CSSProperties;
 
@@ -76,6 +79,11 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
                     </span>
                 )}
                 <p className="text-[var(--text-secondary)] mt-2 mb-4 h-24 overflow-y-auto">{project.description}</p>
+                {project.contributor && (
+                    <p className="text-sm text-[var(--text-muted)] mb-4 italic">
+                         <span className="font-semibold">Contributor:</span> {project.contributor}
+                    </p>
+                )}
                 <div className="mb-4">
                     <p className="text-sm font-semibold text-[var(--text-primary)] mb-1">Created by:</p>
                     <div className="flex flex-wrap gap-2">

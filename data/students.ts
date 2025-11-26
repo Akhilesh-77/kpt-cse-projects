@@ -1,5 +1,6 @@
 
 
+
 import { Student } from '../types';
 
 export const students: Student[] = [
@@ -37,6 +38,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -59,6 +66,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -89,6 +102,12 @@ export const students: Student[] = [
                 title: 'KPT Sports Website',
                 description: 'A dynamic website representing KPT’s sports department with event galleries, team details, and campus sports achievements.',
                 link: 'http://sports-website-two-jade.vercel.app'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -126,6 +145,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -170,6 +195,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -182,6 +213,12 @@ export const students: Student[] = [
                 title: 'Portfolio Website (Resume)',
                 description: 'A personal portfolio displaying details, skills, and projects.',
                 link: 'https://aishii09.github.io/portfolio1/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -233,6 +270,12 @@ export const students: Student[] = [
                 title: 'FRUMIXX – Juices and Hotel Website',
                 description: 'A hotel and juice-center website created with clean UI.',
                 link: 'https://frumixx.netlify.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -291,6 +334,12 @@ export const students: Student[] = [
                 title: 'Kadri Park Website',
                 description: 'An informational website showcasing details about Kadri Park with images and navigation.',
                 link: 'https://kadripark25.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -308,6 +357,12 @@ export const students: Student[] = [
                 title: 'FRUMIXX – Juices & Hotel Website',
                 description: 'A business website built for FRUMIXX hotel and juice center.',
                 link: 'https://frumixx.netlify.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -337,6 +392,12 @@ export const students: Student[] = [
                 title: 'Kadri Park Website',
                 description: 'A clean static website highlighting attractions of Kadri Park.',
                 link: 'https://kadripark25.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -349,6 +410,12 @@ export const students: Student[] = [
                 title: 'FRUMIXX – Juices and Hotel Website',
                 description: 'A business website designed for FRUMIXX juice and hotel services.',
                 link: 'https://frumixx.netlify.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -510,6 +577,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -532,6 +605,12 @@ export const students: Student[] = [
                 title: 'KPT NCC Website',
                 description: 'A dedicated NCC page for KPT, displaying unit information, activities, and gallery content.',
                 link: 'https://kptnccweb.netlify.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -554,6 +633,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -600,6 +685,12 @@ export const students: Student[] = [
                 title: 'Junior Technical School Website',
                 description: 'A school-themed demo website designed with simple navigation and neatly organized informational sections.',
                 link: 'https://junior-technical-school-l97z.onrender.com/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -690,6 +781,12 @@ export const students: Student[] = [
                 title: 'Lakshman Grocery Stall',
                 description: 'A business website for Lakshman Stall.',
                 link: 'https://lakshmanstall.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -741,6 +838,12 @@ export const students: Student[] = [
                 title: 'Indian Oil Petroleum Website',
                 description: 'A service-based website representing Indian Oil station details.',
                 link: 'https://sapthagiri-enterprise-indianoil.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -829,6 +932,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development – Department Site',
                 description: 'A dedicated page for the CSE department’s Full Stack Development content, notes, and structured resources.',
                 link: 'https://fullstack-record.onrender.com/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -1179,6 +1288,12 @@ export const students: Student[] = [
                 title: 'Full Stack Development Lab Manual Website & Lab Manual',
                 description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
                 link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },

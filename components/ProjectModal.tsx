@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Student } from '../types';
 
@@ -127,17 +126,25 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ student, onClose, isAdmin, 
                         {student.projects.length > 0 ? (
                             student.projects.map((project, index) => {
                                 const isSpecialProject = project.title === 'Full Stack Development Lab Manual Website & Lab Manual';
+                                const isOfficialProject = project.title === 'KPT Mangalore College Website';
                                 return (
                                     <div 
                                         key={index} 
                                         className={`bg-[var(--bg-tertiary)] p-4 rounded-lg border transition-all duration-300 ${
                                             isSpecialProject 
                                                 ? 'border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)]' 
-                                                : 'border-[var(--border-color)]'
+                                                : isOfficialProject
+                                                    ? 'border-[var(--accent)] shadow-[0_0_10px_var(--shadow-color)]'
+                                                    : 'border-[var(--border-color)]'
                                         }`}
                                     >
                                         <h4 className="text-lg font-bold text-[var(--accent)]">{project.title}</h4>
                                         <p className="text-[var(--text-secondary)] mt-2 mb-4">{project.description}</p>
+                                        {project.contributor && (
+                                            <p className="text-sm text-[var(--text-muted)] mt-[-10px] mb-4 italic">
+                                                <span className="font-semibold">Contributor:</span> {project.contributor}
+                                            </p>
+                                        )}
                                         {project.link && (
                                             <a
                                                 href={project.link}

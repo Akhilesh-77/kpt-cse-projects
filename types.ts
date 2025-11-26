@@ -1,7 +1,9 @@
+
 export interface Project {
   title: string;
   description: string;
   link: string;
+  contributor?: string;
 }
 
 export interface Student {
