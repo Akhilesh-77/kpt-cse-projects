@@ -254,7 +254,7 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Chirag H P',
+        name: 'CHIRAG H P',
         register_number: '103CS23010',
         avatar: 'https://ik.imagekit.io/akhileshu/chirah.png',
         projects: [
@@ -341,9 +341,9 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Gagan',
+        name: 'GAGAN',
         register_number: '103CS23017',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/gagan.png',
         projects: [
             {
                 title: 'FRUMIXX – Juices and Hotel Website',
@@ -353,7 +353,7 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Ganesh',
+        name: 'GANESH',
         register_number: '103CS23018',
         avatar: 'https://ik.imagekit.io/akhileshu/ganesh.png',
         projects: [
@@ -767,7 +767,7 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'Sanjana S',
+        name: 'SANJANA S',
         register_number: '103CS23043',
         avatar: 'https://ik.imagekit.io/akhileshu/sanjana.png',
         projects: [
