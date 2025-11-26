@@ -1,4 +1,5 @@
 
+
 import { Student } from '../types';
 
 export const students: Student[] = [
@@ -255,7 +256,7 @@ export const students: Student[] = [
     {
         name: 'Chirag H P',
         register_number: '103CS23010',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/chirah.png',
         projects: [
             {
                 title: 'FRUMIXX – Juices and Hotel Website',
@@ -359,12 +360,22 @@ export const students: Student[] = [
             {
                 title: 'Portfolio Website (Resume)',
                 description: 'A portfolio website displaying skills, identity, and academic details.',
-                link: 'https://ganesh-portfolio-woad.vercel.app/'
+                link: 'https://ganesh-portfolio-six.vercel.app/'
             },
             {
                 title: 'BCWD Surathkal Hostel',
                 description: 'A hostel information portal created for BCWD Surathkal students.',
                 link: 'https://bcwdsurathkal.vercel.app/'
+            },
+            {
+                title: 'Sahyadri Hotels',
+                description: 'A hotel information and service website built for Sahyadri Hotels featuring details, navigation, and structured layout.',
+                link: 'https://hotelsahydri.onrender.com/'
+            },
+            {
+                title: 'KPT Technical Club',
+                description: 'A website created for the KPT Technical Club highlighting activities, updates, and student initiatives.',
+                link: 'https://kpt-tech.vercel.app/'
             }
         ]
     },
@@ -566,12 +577,12 @@ export const students: Student[] = [
     {
         name: 'MOHAMMED RAYAAN',
         register_number: '103CS23029',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/rayaan.png',
         projects: [
             {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple personal resume-style portfolio designed to present basic information, academic details and identity in a clean layout.',
-                link: ''
+                title: 'CRUST RESTAURANT WEBSITE',
+                description: 'A responsive restaurant website built for Crust Restaurant featuring menu, visuals, and ordering layout.',
+                link: 'https://food-del-nine-plum.vercel.app/'
             }
         ]
     },
@@ -758,7 +769,7 @@ export const students: Student[] = [
     {
         name: 'Sanjana S',
         register_number: '103CS23043',
-        avatar: 'https://ik.imagekit.io/akhileshu/user%20image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/sanjana.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
