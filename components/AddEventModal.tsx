@@ -30,43 +30,40 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        
         if (!eventName.trim() || !eventDescription.trim() || !photos || photos.length === 0) {
             setToastMessage('Please fill all fields and upload at least one photo.');
             return;
         }
 
-        const confirmationMessage = `This action will request the admin to add this event.
-You will be redirected to your email client to send the details. Please remember to manually attach the ${photos.length} photo(s) you selected.
+        // WhatsApp number with country code (91 for India) as required by WhatsApp API
+        const phoneNumber = '916363027032';
+        
+        // Extract filenames from the FileList
+        const fileNames = Array.from(photos).map(f => f.name).join(', ');
+
+        const message = `*Event Submission Request*
+
+*Title:* ${eventName}
+*Description:* ${eventDescription}
+*Image Files:* ${fileNames}
+
+(Please attach the selected images to this chat)`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        const confirmationMessage = `This action will open WhatsApp to send the event details to the admin.
+
+Please remember to manually attach the ${photos.length} photo(s) you selected to the WhatsApp chat.
 
 Do you want to continue?`;
         
         if (window.confirm(confirmationMessage)) {
-            const adminEmail = 'akhilesh2777u@gmail.com';
-            const subject = `Event Submission Request: ${eventName}`;
-            const body = `Hello Admin,
-
-Please find the details for the new event submission below.
-The user has been instructed to manually attach all photos to this email.
-
------------------------------------
-
-Event Name:
-${eventName}
-
-Event Description:
-${eventDescription}
-
------------------------------------
-
-Number of Photos to Attach: ${photos.length}
-
-Thank you.
-`;
-
-            const mailtoLink = `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
             
-            setToastMessage('Redirecting to email client...');
+            setToastMessage('Opening WhatsApp...');
             resetForm();
             onClose();
         }

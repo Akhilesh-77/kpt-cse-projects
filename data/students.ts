@@ -273,7 +273,7 @@ export const students: Student[] = [
             {
                 title: 'Hotel Mane Uta',
                 description: 'A restaurant website built for the Mane Uta hotel featuring menu and contact details.',
-                link: 'https://mane-uta-seven.vercel.app/contact'
+                link: 'https://mane-uta-seven.vercel.app/'
             }
         ]
     },
@@ -1207,7 +1207,7 @@ export const students: Student[] = [
             {
                 title: 'Hotel Mane Uta',
                 description: 'A restaurant website for Mane Uta displaying menu, information, and contact section.',
-                link: 'https://mane-uta-seven.vercel.app/contact'
+                link: 'https://mane-uta-seven.vercel.app/'
             }
         ]
     }
