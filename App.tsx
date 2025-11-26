@@ -19,6 +19,7 @@ import ProjectsSection from './components/ProjectsSection';
 import EventsSection from './components/EventsSection';
 import AddEventModal from './components/AddEventModal';
 import FacultyModal from './components/FacultyModal';
+import AddProjectModal from './components/AddProjectModal';
 
 type Tab = 'home' | 'projects' | 'cohort-owners' | 'events' | 'credits';
 
@@ -31,6 +32,7 @@ const App: React.FC = () => {
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
     const [isAddEventModalOpen, setAddEventModalOpen] = useState(false);
+    const [isAddProjectModalOpen, setAddProjectModalOpen] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [activeTab, setActiveTab] = useState<Tab>('home');
@@ -171,6 +173,33 @@ const App: React.FC = () => {
         setAddModalOpen(false);
         setToastMessage('Student added successfully!');
     };
+
+    const handleAddProject = (newStudent: Student) => {
+        // Check if student already exists by register number
+        const existingStudentIndex = students.findIndex(s => s.register_number === newStudent.register_number);
+        
+        if (existingStudentIndex >= 0) {
+            // If student exists, add projects to existing student
+            // NOTE: The prompt says "Do NOT overwrite any existing data". This usually means appending.
+            setStudents(prevStudents => {
+                const updatedStudents = [...prevStudents];
+                const existingStudent = updatedStudents[existingStudentIndex];
+                
+                // Add new projects to existing list
+                updatedStudents[existingStudentIndex] = {
+                    ...existingStudent,
+                    projects: [...existingStudent.projects, ...newStudent.projects]
+                };
+                return updatedStudents;
+            });
+            setToastMessage('Projects added to existing student profile!');
+        } else {
+            // New student
+            setStudents(prevStudents => [...prevStudents, newStudent]);
+            setToastMessage('New student profile created with projects!');
+        }
+        setAddProjectModalOpen(false);
+    };
     
     const handleEditStudent = (updatedStudent: Student) => {
         setStudents(prevStudents => 
@@ -286,7 +315,12 @@ const App: React.FC = () => {
                 </main>
             )}
 
-            {activeTab === 'projects' && <ProjectsSection students={students} />}
+            {activeTab === 'projects' && (
+                <ProjectsSection 
+                    students={students} 
+                    onAddProjectClick={() => setAddProjectModalOpen(true)}
+                />
+            )}
 
             {activeTab === 'cohort-owners' && <FacultySection onSelectFaculty={handleSelectFaculty} />}
 
@@ -345,6 +379,12 @@ const App: React.FC = () => {
                 isOpen={isAddEventModalOpen}
                 onClose={() => setAddEventModalOpen(false)}
                 setToastMessage={setToastMessage}
+            />
+
+            <AddProjectModal
+                isOpen={isAddProjectModalOpen}
+                onClose={() => setAddProjectModalOpen(false)}
+                onAddProject={handleAddProject}
             />
             
             <Toast message={toastMessage} onClose={() => setToastMessage(null)} />

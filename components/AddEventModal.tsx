@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface AddEventModalProps {
     isOpen: boolean;
@@ -11,6 +11,8 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
     const [eventDescription, setEventDescription] = useState('');
     const [photos, setPhotos] = useState<FileList | null>(null);
     const [showNotice, setShowNotice] = useState(false);
+    
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (isOpen) {
@@ -23,15 +25,13 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
         setEventDescription('');
         setPhotos(null);
         setShowNotice(false);
-        // Reset file input visually
-        const fileInput = document.getElementById('event-photo-upload') as HTMLInputElement;
-        if (fileInput) {
-            fileInput.value = '';
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
         }
     };
 
     const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
+        if (e.target.files && e.target.files.length > 0) {
             setPhotos(e.target.files);
         }
     };
@@ -48,10 +48,7 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
     };
 
     const handleProceed = () => {
-        // WhatsApp number with country code (91 for India) as required by WhatsApp API
         const phoneNumber = '916363027032';
-        
-        // Extract filenames from the FileList
         const fileNames = photos ? Array.from(photos).map(f => f.name).join(', ') : '';
 
         const message = `*Event Submission Request*
@@ -65,7 +62,6 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         
-        // Open in new tab immediately without blocking UI
         window.open(whatsappUrl, '_blank');
         
         setToastMessage(`Opening WhatsApp... Please attach ${photos ? photos.length : 0} photo(s).`);
@@ -100,7 +96,7 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, setToast
                             <div className="mb-4">
                                 <label className="font-semibold">Upload Photos</label>
                                 <input 
-                                    id="event-photo-upload"
+                                    ref={fileInputRef}
                                     type="file" 
                                     multiple 
                                     accept="image/*" 

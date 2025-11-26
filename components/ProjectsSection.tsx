@@ -8,6 +8,7 @@ interface ProcessedProject {
 
 interface ProjectsSectionProps {
     students: Student[];
+    onAddProjectClick: () => void;
 }
 
 const useCountUp = (end: number, duration: number = 1500) => {
@@ -128,7 +129,7 @@ const ShareIcon = () => (
 );
 
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students, onAddProjectClick }) => {
     const [filter, setFilter] = useState<'all' | 'single' | 'group'>('all');
 
     const processedProjects = useMemo(() => {
@@ -224,7 +225,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
     };
 
     return (
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
             <div className="flex justify-center items-center gap-4 text-center mb-4 opacity-0 animate-fade-in-up">
                 <h2 className="text-4xl font-bold text-[var(--text-secondary)]">
                     Projects Showcase
@@ -274,6 +275,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students }) => {
                     </p>
                 </div>
             )}
+
+            <button
+                onClick={onAddProjectClick}
+                title="Add New Project"
+                aria-label="Add New Project"
+                className="fixed bottom-6 right-6 bg-[var(--accent)] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-3xl font-bold hover:bg-[var(--accent-hover)] transition-all duration-300 transform hover:scale-110 z-30"
+            >
+                +
+            </button>
         </section>
     );
 };

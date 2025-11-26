@@ -185,11 +185,11 @@ const EventPost: React.FC<EventPostProps> = ({ event, className, style, id }) =>
             }}
           >
             {event.images.map((imgSrc, index) => (
-               <div key={index} className="w-full h-full flex-shrink-0 relative">
+               <div key={index} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
                  <img 
                    src={imgSrc} 
                    alt={`${event.title} ${index + 1}`} 
-                   className="w-full h-full object-cover pointer-events-none select-none"
+                   className="w-full h-full object-contain pointer-events-none select-none"
                    draggable={false}
                  />
                </div>
