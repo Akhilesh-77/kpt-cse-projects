@@ -7,7 +7,7 @@ export const students: Student[] = [
     {
         name: 'AKHILESH U',
         register_number: '103CS23004',
-        avatar: 'https://ik.imagekit.io/akhileshu/akhilesh.jpg',
+        avatar: 'https://ik.imagekit.io/akhileshu/akhileshu.png',
         projects: [
             {
                 title: 'Personal Portfolio Website',
@@ -213,12 +213,6 @@ export const students: Student[] = [
                 title: 'Portfolio Website (Resume)',
                 description: 'A personal portfolio displaying details, skills, and projects.',
                 link: 'https://aishii09.github.io/portfolio1/'
-            },
-            {
-                title: 'KPT Mangalore College Website',
-                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
-                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
-                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
@@ -392,12 +386,6 @@ export const students: Student[] = [
                 title: 'Kadri Park Website',
                 description: 'A clean static website highlighting attractions of Kadri Park.',
                 link: 'https://kadripark25.vercel.app/'
-            },
-            {
-                title: 'KPT Mangalore College Website',
-                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
-                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
-                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
