@@ -40,7 +40,7 @@ export const students: Student[] = [
                 link: 'https://fullstack-labmanual.vercel.app/'
             },
             {
-                title: 'KPT Mangalore College Website 💎',
+                title: 'Karnataka (Govt.) Polytechnic Mangalore College Website 💎',
                 description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
                 link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
                 contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
