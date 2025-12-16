@@ -213,6 +213,12 @@ export const students: Student[] = [
                 title: 'Portfolio Website (Resume)',
                 description: 'A personal portfolio displaying details, skills, and projects.',
                 link: 'https://aishii09.github.io/portfolio1/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
             }
         ]
     },
