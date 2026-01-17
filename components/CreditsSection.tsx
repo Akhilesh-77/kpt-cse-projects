@@ -3,7 +3,7 @@ import React from 'react';
 const creatorData = {
     name: 'Akhilesh U',
     details: [
-        '5th Semester',
+        'Final Year, 6th Semester',
         'Third Year CSE',
         'Karnataka (Govt.) Polytechnic Mangalore'
     ],
