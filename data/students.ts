@@ -1337,7 +1337,7 @@ export const students: Student[] = [
     {
         name: 'SHUSHANTH K',
         register_number: '103CS23048',
-        avatar: 'https://ik.imagekit.io/akhileshu/image.png',
+        avatar: 'https://ik.imagekit.io/akhileshu/Screenshot%202026-01-17%20133538.png',
         projects: [
             {
                 title: 'Portfolio Website (Resume)',
