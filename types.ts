@@ -31,6 +31,8 @@ export interface Event {
   timestamp: string;
 }
 
-export type Theme = 'black' | 'white' | 'pink' | 'yellow' | 'rainbow';
+export type Theme = 'black' | 'white' | 'pink' | 'yellow' | 'rainbow' | 'ultra-multicolor';
 
 export type SortOption = 'name-asc' | 'name-desc' | 'reg-asc' | 'reg-desc' | 'latest-asc' | 'projects-desc';
+
+export type Tab = 'home' | 'projects' | 'cohort-owners' | 'events' | 'credits' | 'qr-code';
