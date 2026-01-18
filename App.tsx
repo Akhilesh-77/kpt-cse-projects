@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Student, Theme, SortOption, FacultyMember, Tab } from './types';
 import { students as initialStudents } from './data/students';
 import { allFaculty } from './data/faculty';
+import { technicalFacts } from './data/facts';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import StudentGrid from './components/StudentGrid';
@@ -47,24 +48,6 @@ const App: React.FC = () => {
     const [theme, setTheme] = useState<Theme>(() => {
         return (localStorage.getItem('theme') as Theme) || 'black';
     });
-
-    const homeFacts = [
-        "This website is built as a complete web application, not a static site.",
-        "Light and Dark themes are fully dynamic and user-controlled.",
-        "Every project card supports 16:9 real desktop screenshots.",
-        "Stories mode is inspired by Instagram-style experiences.",
-        "QR code sharing makes access faster for mobile users.",
-        "Each section of this website is individually shareable.",
-        "This portfolio is optimized for both mobile and desktop.",
-        "Project counters are auto-generated based on content.",
-        "KPT projects are separated using keyword intelligence.",
-        "This app uses animated onboarding for first-time users.",
-        "Paper tear animation is inspired by real paper texture.",
-        "All UI elements follow a card-based modern design.",
-        "This site supports persistent user preferences.",
-        "Every project can redirect to a live hosted website.",
-        "The entire platform is designed for academic showcasing."
-    ];
 
     useEffect(() => {
         document.documentElement.className = `theme-${theme}`;
@@ -308,15 +291,7 @@ const App: React.FC = () => {
                 onImportClick={triggerImport}
                 onQRCodeClick={() => handleTabChange('qr-code')}
             />
-            {/* Navigation is hidden on QR Code page to mimic a standalone page feel, or can remain. 
-                Based on requirement "Header and Footer must remain visible", but app doesn't have a distinct footer component, 
-                and Navigation acts as the main secondary header. 
-                Keeping Navigation visible allows easy return, but user requested "Back to Home" button.
-                Let's keep Navigation visible for consistency unless activeTab is qr-code if we want a cleaner look, 
-                but usually header + nav is standard. 
-                However, for a "Page" feel, maybe just Header is enough. 
-                Let's keep it visible.
-            */}
+            
             <Navigation activeTab={activeTab} onTabChange={handleTabChange} />
             
             {activeTab === 'home' && (
@@ -340,8 +315,9 @@ const App: React.FC = () => {
                             </p>
                         </div>
                     )}
-                    {/* Floating Facts for Home Page - Bottom Left */}
-                    <FloatingFacts facts={homeFacts} className="bottom-6 left-6" alignment="left" />
+                    
+                    {/* Floating Facts - Unified Position */}
+                    <FloatingFacts facts={technicalFacts} />
                 </main>
             )}
 
