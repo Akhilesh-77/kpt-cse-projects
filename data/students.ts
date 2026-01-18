@@ -12,7 +12,7 @@ export const students: Student[] = [
             {
                 title: 'Personal Portfolio Website',
                 description: 'A clean and modern portfolio showcasing academic background, skills, achievements, and projects with a responsive UI optimized for both mobile and desktop.',
-                link: 'https://akhilesh-git-master-code-akhileshs-projects.vercel.app/'
+                link: 'https://akhileshhub.vercel.app/#/'
             },
             {
                 title: 'Crust Restaurant & Food Ordering Website',
