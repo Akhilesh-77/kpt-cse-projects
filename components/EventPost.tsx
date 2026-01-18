@@ -40,7 +40,16 @@ const ChevronRightIcon = () => (
 
 
 const EventPost: React.FC<EventPostProps> = ({ event, className, style, id }) => {
-  const [isLiked, setIsLiked] = useState(false);
+  // PERSISTENT LIKE STORAGE FIX
+  const [isLiked, setIsLiked] = useState(() => {
+    try {
+      const saved = localStorage.getItem(`like_event_${event.id}`);
+      return saved === 'true';
+    } catch {
+      return false;
+    }
+  });
+  
   const [showHeart, setShowHeart] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -53,7 +62,13 @@ const EventPost: React.FC<EventPostProps> = ({ event, className, style, id }) =>
   const clickTimeout = useRef<number | null>(null);
   
   const handleLike = () => {
-    setIsLiked(prev => !prev);
+    const newState = !isLiked;
+    setIsLiked(newState);
+    try {
+      localStorage.setItem(`like_event_${event.id}`, String(newState));
+    } catch (e) {
+      console.error('Failed to save like state', e);
+    }
   };
 
   const showHeartAnimation = useCallback(() => {
@@ -70,6 +85,7 @@ const EventPost: React.FC<EventPostProps> = ({ event, className, style, id }) =>
       clickTimeout.current = null;
       if (!isLiked) {
         setIsLiked(true);
+        localStorage.setItem(`like_event_${event.id}`, 'true');
       }
       showHeartAnimation();
     } else {
