@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Student, Theme, SortOption, FacultyMember } from './types';
+import { Student, Theme, SortOption, FacultyMember, Tab } from './types';
 import { students as initialStudents } from './data/students';
 import { allFaculty } from './data/faculty';
 import Header from './components/Header';
@@ -20,8 +20,8 @@ import EventsSection from './components/EventsSection';
 import AddEventModal from './components/AddEventModal';
 import FacultyModal from './components/FacultyModal';
 import AddProjectModal from './components/AddProjectModal';
-
-type Tab = 'home' | 'projects' | 'cohort-owners' | 'events' | 'credits';
+import UserGuide from './components/UserGuide';
+import QRCodeSection from './components/QRCodeSection';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -86,7 +86,7 @@ const App: React.FC = () => {
             setSelectedStudent(null);
             setSelectedFaculty(null);
             const hashPart = hash.split('?')[0];
-            if (['projects', 'cohort-owners', 'events', 'credits'].includes(hashPart)) {
+            if (['projects', 'cohort-owners', 'events', 'credits', 'qr-code'].includes(hashPart)) {
                 setActiveTab(hashPart as Tab);
             } else {
                 setActiveTab('home');
@@ -194,9 +194,6 @@ const App: React.FC = () => {
             }
         });
 
-        // Use setTimeout to ensure toast message logic runs after state update logic initiates,
-        // though strictly 'isExisting' inside the setter won't leak out.
-        // We re-check existence in current state to set message correctly immediately.
         const exists = students.some(s => s.register_number === newStudent.register_number);
         setToastMessage(exists ? 'Projects added to existing student profile!' : 'New student profile created with projects!');
         setAddProjectModalOpen(false);
@@ -281,6 +278,7 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans">
+            <UserGuide />
             <Header 
                 currentTheme={theme} 
                 setTheme={setTheme}
@@ -289,7 +287,17 @@ const App: React.FC = () => {
                 onLogoutClick={handleLogout}
                 onExportClick={handleExport}
                 onImportClick={triggerImport}
+                onQRCodeClick={() => handleTabChange('qr-code')}
             />
+            {/* Navigation is hidden on QR Code page to mimic a standalone page feel, or can remain. 
+                Based on requirement "Header and Footer must remain visible", but app doesn't have a distinct footer component, 
+                and Navigation acts as the main secondary header. 
+                Keeping Navigation visible allows easy return, but user requested "Back to Home" button.
+                Let's keep Navigation visible for consistency unless activeTab is qr-code if we want a cleaner look, 
+                but usually header + nav is standard. 
+                However, for a "Page" feel, maybe just Header is enough. 
+                Let's keep it visible.
+            */}
             <Navigation activeTab={activeTab} onTabChange={handleTabChange} />
             
             {activeTab === 'home' && (
@@ -328,6 +336,8 @@ const App: React.FC = () => {
             {activeTab === 'events' && <EventsSection onAddEventClick={() => setAddEventModalOpen(true)} />}
 
             {activeTab === 'credits' && <CreditsSection />}
+
+            {activeTab === 'qr-code' && <QRCodeSection onBack={() => handleTabChange('home')} />}
 
             {isAdmin && activeTab === 'home' && (
                 <button
