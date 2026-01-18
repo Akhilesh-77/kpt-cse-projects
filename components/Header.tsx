@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ currentTheme, setTheme, isAdmin, onLogi
                     {/* Visit CSE Website Button (Desktop) */}
                     <a
                         id="btn-visit-csc-desktop"
-                        href="https://gpt.karnataka.gov.in/kptmangalore/public/en"
+                        href="https://kptcs.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden sm:inline-flex items-center px-4 py-1.5 border border-[var(--accent)] text-[var(--accent)] rounded-lg text-sm font-semibold hover:bg-[var(--accent)] hover:text-white transition-all duration-300 transform hover:scale-105"
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ currentTheme, setTheme, isAdmin, onLogi
                     {/* Visit CSE Website Icon (Mobile) */}
                     <a
                         id="btn-visit-csc-mobile"
-                        href="https://gpt.karnataka.gov.in/kptmangalore/public/en"
+                        href="https://kptcs.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="sm:hidden inline-flex items-center justify-center w-10 h-10 border border-[var(--accent)] text-[var(--accent)] rounded-full hover:bg-[var(--accent)] hover:text-white transition-all duration-300"
@@ -62,9 +62,11 @@ const Header: React.FC<HeaderProps> = ({ currentTheme, setTheme, isAdmin, onLogi
                         className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110"
                         title="Scan Website QR Code"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4h-4v-2h-4v2H4v-4h2m6 2h4m6-4H2m12-3.99A4 4 0 0013.99 9M18 13.99A4 4 0 0113.99 9M9 13.99A4 4 0 0013.99 18M9 9.01A4 4 0 0113.99 4M8 8a2 2 0 11-4 0 2 2 0 014 0zm0 10a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0zm0-10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                         {/* Clean Pixel-Grid QR Icon */}
+                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm8 6h6v-6h-6v6zm2-2v2h2v-2h-2v2zm2-2h2v-2h-2v2zm-2-2h2v-2h-2v2zm2 0h2v-2h-2v2z"/>
+                            <path d="M10 10h4v4h-4zm-7 0h4v4H3z" opacity="0.5"/>
+                         </svg>
                     </button>
 
                     <div id="header-theme-toggle">
