@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Student, Theme, SortOption, FacultyMember, Tab } from './types';
+import { Student, Theme, SortOption, FacultyMember, Tab, Project } from './types';
 import { students as initialStudents } from './data/students';
 import { allFaculty } from './data/faculty';
 import { technicalFacts } from './data/facts';
@@ -24,6 +24,9 @@ import AddProjectModal from './components/AddProjectModal';
 import UserGuide from './components/UserGuide';
 import QRCodeSection from './components/QRCodeSection';
 import FloatingFacts from './components/FloatingFacts';
+import RandomProjectPicker from './components/RandomProjectPicker';
+import SingleProjectModal from './components/SingleProjectModal';
+import { generateProjectSlug } from './utils';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -36,6 +39,10 @@ const App: React.FC = () => {
     const [isAddEventModalOpen, setAddEventModalOpen] = useState(false);
     const [isAddProjectModalOpen, setAddProjectModalOpen] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
+    
+    // State for shared project link viewing
+    const [viewedProject, setViewedProject] = useState<{ project: Project; student: Student } | null>(null);
+
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [activeTab, setActiveTab] = useState<Tab>('home');
 
@@ -64,13 +71,40 @@ const App: React.FC = () => {
             const path = window.location.pathname;
             const hash = window.location.hash.substring(1);
 
-            // Priority 1: Check for student/faculty modal paths
+            // Priority 1: Check for shared project path: /project/:slug
+            const projectMatch = path.match(/^\/project\/([\w-]+)$/);
+            if (projectMatch) {
+                const slug = projectMatch[1];
+                let foundProject: { project: Project; student: Student } | null = null;
+                
+                // Find the project matching the slug
+                for (const student of students) {
+                    for (const project of student.projects) {
+                        if (generateProjectSlug(project.title, student.name) === slug) {
+                            foundProject = { project, student };
+                            break;
+                        }
+                    }
+                    if (foundProject) break;
+                }
+
+                if (foundProject) {
+                    setViewedProject(foundProject);
+                    setSelectedStudent(null);
+                    setSelectedFaculty(null);
+                    // Ensure we are in a context where modal makes sense, though modal is global
+                    return; 
+                }
+            }
+
+            // Priority 2: Check for student/faculty modal paths
             const studentMatch = path.match(/^\/student\/([\w-]+)$/);
             if (studentMatch) {
                 const registerNumber = studentMatch[1];
                 const studentFromUrl = students.find(s => s.register_number === registerNumber);
                 setSelectedStudent(studentFromUrl || null);
                 setSelectedFaculty(null);
+                setViewedProject(null);
                 return;
             }
             
@@ -80,13 +114,15 @@ const App: React.FC = () => {
                 const facultyFromUrl = allFaculty.find(f => f.id === facultyId);
                 setSelectedFaculty(facultyFromUrl || null);
                 setSelectedStudent(null);
+                setViewedProject(null);
                 if (facultyFromUrl) setActiveTab('cohort-owners');
                 return;
             }
 
-            // Priority 2: If no modal path, clear modals and set tab from hash
+            // Priority 3: If no modal path, clear modals and set tab from hash
             setSelectedStudent(null);
             setSelectedFaculty(null);
+            setViewedProject(null);
             const hashPart = hash.split('?')[0];
             if (['projects', 'cohort-owners', 'events', 'credits', 'qr-code'].includes(hashPart)) {
                 setActiveTab(hashPart as Tab);
@@ -148,6 +184,12 @@ const App: React.FC = () => {
 
     const handleCloseModal = () => {
         setSelectedStudent(null);
+        const url = activeTab === 'home' ? '/' : `/#${activeTab}`;
+        window.history.pushState(null, '', url);
+    };
+    
+    const handleCloseViewedProject = () => {
+        setViewedProject(null);
         const url = activeTab === 'home' ? '/' : `/#${activeTab}`;
         window.history.pushState(null, '', url);
     };
@@ -316,16 +358,21 @@ const App: React.FC = () => {
                         </div>
                     )}
                     
-                    {/* Floating Facts - Unified Position */}
+                    {/* Floating Facts */}
                     <FloatingFacts facts={technicalFacts} />
+                    {/* Random Project Picker - Both Home and Projects */}
+                    <RandomProjectPicker students={students} />
                 </main>
             )}
 
             {activeTab === 'projects' && (
-                <ProjectsSection 
-                    students={students} 
-                    onAddProjectClick={() => setAddProjectModalOpen(true)}
-                />
+                <>
+                    <ProjectsSection 
+                        students={students} 
+                        onAddProjectClick={() => setAddProjectModalOpen(true)}
+                    />
+                    <RandomProjectPicker students={students} />
+                </>
             )}
 
             {activeTab === 'cohort-owners' && <FacultySection onSelectFaculty={handleSelectFaculty} />}
@@ -346,6 +393,15 @@ const App: React.FC = () => {
                 </button>
             )}
             
+            {/* Modal for viewing a shared project directly */}
+            {viewedProject && (
+                <SingleProjectModal 
+                    project={viewedProject.project}
+                    student={viewedProject.student}
+                    onClose={handleCloseViewedProject}
+                />
+            )}
+
             <ProjectModal 
                 student={selectedStudent} 
                 onClose={handleCloseModal}
