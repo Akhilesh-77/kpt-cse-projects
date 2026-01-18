@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 interface FloatingFactsProps {
     facts: string[];
-    className?: string;
+    className?: string; // Kept for compatibility, but we will enforce specific positioning
     alignment?: 'left' | 'right';
 }
 
@@ -15,11 +15,15 @@ const FloatingFacts: React.FC<FloatingFactsProps> = ({ facts, className, alignme
         setIndex((prev) => (prev + 1) % facts.length);
     };
 
+    // Unified position class: bottom-40 right-6
+    // This ensures it sits above the 'Scroll To Top' (bottom-24) and 'Add' buttons (bottom-6)
+    const positionClass = "bottom-40 right-6";
+
     return (
-        <div className={`fixed z-30 ${className}`}>
+        <div className={`fixed z-30 ${positionClass}`}>
             {isOpen && (
                 <div 
-                    className={`absolute bottom-16 mb-2 w-72 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl shadow-2xl p-5 animate-fade-in-up ${alignment === 'left' ? 'left-0 origin-bottom-left' : 'right-0 origin-bottom-right'}`}
+                    className={`absolute bottom-16 mb-2 w-72 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl shadow-2xl p-5 animate-fade-in-up origin-bottom-right right-0`}
                 >
                     <div className="flex justify-between items-center mb-3">
                         <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider flex items-center gap-1">
@@ -35,14 +39,14 @@ const FloatingFacts: React.FC<FloatingFactsProps> = ({ facts, className, alignme
                         </button>
                     </div>
                     
-                    <p className="text-[var(--text-primary)] text-sm leading-relaxed min-h-[4rem]">
+                    <p className="text-[var(--text-primary)] text-sm leading-relaxed min-h-[4rem] font-medium">
                         {facts[index]}
                     </p>
 
                     <div className="flex justify-end mt-2">
                          <button 
                             onClick={handleNext}
-                            className="bg-[var(--bg-tertiary)] hover:bg-[var(--accent)] hover:text-white text-[var(--text-primary)] text-xs font-semibold px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
+                            className="bg-[var(--bg-tertiary)] hover:bg-[var(--accent)] hover:text-white text-[var(--text-primary)] text-xs font-bold px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1 shadow-sm"
                         >
                             Next Fact
                             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
