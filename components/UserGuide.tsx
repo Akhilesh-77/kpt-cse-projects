@@ -60,6 +60,7 @@ const UserGuide: React.FC = () => {
     const [rect, setRect] = useState<DOMRect | null>(null);
     const resizeTimeoutRef = useRef<number | null>(null);
 
+    // Initial check for completion
     useEffect(() => {
         const completed = localStorage.getItem('userGuideCompleted');
         if (!completed) {
@@ -67,26 +68,32 @@ const UserGuide: React.FC = () => {
         }
     }, []);
 
-    const updateRect = useCallback(() => {
+    // Helper to get the target element
+    const getTargetElement = useCallback(() => {
         const step = steps[currentStep];
-        let element: HTMLElement | null = null;
+        if (!step || step.target === 'finish') return null;
 
         if (Array.isArray(step.target)) {
             // Find the first visible element from the list
             for (const id of step.target) {
                 const el = document.getElementById(id);
                 if (el && el.offsetParent !== null) {
-                    element = el;
-                    break;
+                    return el;
                 }
             }
-        } else if (step.target !== 'finish') {
-            element = document.getElementById(step.target);
+            return null;
+        } else {
+            return document.getElementById(step.target);
         }
+    }, [currentStep]);
 
+    // Calculate position WITHOUT scrolling
+    const calculatePosition = useCallback(() => {
+        if (!isVisible) return;
+        
+        const element = getTargetElement();
         if (element) {
             const r = element.getBoundingClientRect();
-            // Add padding
             const padding = 8;
             setRect({
                 ...r,
@@ -100,33 +107,55 @@ const UserGuide: React.FC = () => {
                 y: r.y - padding,
                 toJSON: r.toJSON
             });
-            // Ensure element is in view
-            element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
         } else {
-            setRect(null); // 'finish' step or element not found
+            if (steps[currentStep].target === 'finish') {
+                setRect(null);
+            }
         }
-    }, [currentStep]);
+    }, [isVisible, currentStep, getTargetElement]);
 
+    // Scroll to element only when step changes
+    const scrollToTarget = useCallback(() => {
+        if (!isVisible) return;
+
+        const element = getTargetElement();
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            // Recalculate position after scroll (delay to allow smooth scroll to start/finish)
+            setTimeout(calculatePosition, 500);
+        }
+    }, [isVisible, getTargetElement, calculatePosition]);
+
+    // Effect: Handle step changes (Scroll + Calculate)
     useEffect(() => {
         if (isVisible) {
             // Small delay to ensure UI is ready
-            const timer = setTimeout(updateRect, 300);
+            const timer = setTimeout(() => {
+                scrollToTarget();
+                calculatePosition();
+            }, 300);
             return () => clearTimeout(timer);
         }
-    }, [isVisible, currentStep, updateRect]);
+    }, [isVisible, currentStep, scrollToTarget, calculatePosition]);
 
+    // Effect: Handle Scroll & Resize (Calculate Only, NO SCROLL)
     useEffect(() => {
+        if (!isVisible) return; // Don't attach listeners if not visible
+
         const handleResize = () => {
             if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
-            resizeTimeoutRef.current = window.setTimeout(updateRect, 100);
+            resizeTimeoutRef.current = window.setTimeout(calculatePosition, 100);
         };
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('scroll', updateRect, true); // Capture scrolling
+        
+        // Use passive listeners for better performance
+        window.addEventListener('resize', handleResize, { passive: true });
+        window.addEventListener('scroll', calculatePosition, { capture: true, passive: true });
+        
         return () => {
             window.removeEventListener('resize', handleResize);
-            window.removeEventListener('scroll', updateRect, true);
+            window.removeEventListener('scroll', calculatePosition, { capture: true });
         };
-    }, [updateRect]);
+    }, [isVisible, calculatePosition]);
 
     const handleNext = () => {
         if (currentStep < steps.length - 1) {
