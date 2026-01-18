@@ -1,0 +1,22 @@
+export const technicalFacts = [
+    "This application is engineered using React 18, leveraging Concurrent Mode for seamless rendering.",
+    "The User Interface is built with Tailwind CSS, utilizing Just-In-Time (JIT) compilation for zero-bloat stylesheets.",
+    "State management relies on React Hooks (useState, useEffect, useMemo) to ensure purely functional component logic.",
+    "Data flow is strictly typed using TypeScript interfaces, preventing runtime errors and ensuring code reliability.",
+    "The application features a fully responsive Grid and Flexbox layout system that adapts to over 5 different screen breakpoints.",
+    "Theme switching is powered by CSS Custom Properties (Variables), allowing for instant, repaint-free mode toggling.",
+    "All animations use hardware-accelerated CSS transitions (transform, opacity) to maintain 60 FPS performance.",
+    "The 'Stories' feature mimics Instagram's logic using timed state transitions and overlay layering techniques.",
+    "Images are optimized with lazy-loading attributes to reduce initial Time-To-Interactive (TTI) metrics.",
+    "The routing mechanism uses the HTML5 History API, enabling single-page navigation without full page reloads.",
+    "This project structure is modular, separating concerns into Components, Types, and Data layers for maintainability.",
+    "Search functionality uses real-time array filtering with memoized computations to handle data efficiently.",
+    "Accessibility (a11y) is core to the design, utilizing semantic HTML tags and ARIA attributes for screen readers.",
+    "The codebase contains custom reusable components like Modals, Toasts, and Floating Panels to reduce code duplication.",
+    "Event listeners for scrolling are optimized with 'passive' flags to prevent blocking the main thread.",
+    "The application handles complex JSON data structures to dynamically generate student and faculty profiles.",
+    "Scroll positions and navigation states are preserved using Session Storage and URL Hash management.",
+    "Glassmorphism effects are achieved using backdrop-filter utilities, requiring modern browser engine support.",
+    "The layout engine minimizes Cumulative Layout Shift (CLS) by reserving space for media elements.",
+    "This entire platform is a client-side application (CSA) deployed on edge networks for global low-latency access."
+];
