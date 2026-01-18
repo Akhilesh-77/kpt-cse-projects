@@ -56,12 +56,19 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
     const isGroupProject = students.length > 1;
     const isSpecialProject = project.title === 'Full Stack Development Lab Manual Website & Lab Manual';
     const isOfficialProject = project.title === 'KPT Mangalore College Website';
+    
+    // Visibility Check
+    const visibility = project.visibility || 'active';
+    const isInactive = visibility !== 'active';
+    
+    // Dim Styling for non-active projects
+    const dimStyleClass = isInactive ? 'opacity-70 grayscale-[30%] hover:opacity-100 hover:grayscale-0' : '';
 
     const cardClasses = isSpecialProject
-        ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 ${className}`
+        ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 ${dimStyleClass} ${className}`
         : isOfficialProject
-            ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[var(--accent)] shadow-[0_0_15px_var(--shadow-color)] hover:shadow-[0_0_25px_var(--shadow-color)] transition-all duration-300 ${className}`
-            : `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${className}`;
+            ? `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-[var(--accent)] shadow-[0_0_15px_var(--shadow-color)] hover:shadow-[0_0_25px_var(--shadow-color)] transition-all duration-300 ${dimStyleClass} ${className}`
+            : `bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] transition-all duration-300 ${dimStyleClass} ${className}`;
 
     // Merge custom styles with shadow color logic, ensuring special/official project shadow takes precedence in class
     const combinedStyle = {
@@ -124,6 +131,11 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
                         Group Project
                     </span>
                 )}
+                {isInactive && (
+                    <span className="inline-block bg-[var(--bg-primary)] border border-[var(--border-color)] text-[var(--text-muted)] text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full mt-2 capitalize">
+                        {visibility}
+                    </span>
+                )}
                 <p className="text-[var(--text-secondary)] mt-2 mb-4 h-24 overflow-y-auto">{project.description}</p>
                 {project.contributor && (
                     <p className="text-sm text-[var(--text-muted)] mb-4 italic">
@@ -150,7 +162,7 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
             >
                 Visit Project
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
             </a>
         </div>
@@ -195,19 +207,33 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students, onAddProjec
         });
         
         return Array.from(projectMap.values()).sort((a, b) => {
+            // S SHIVANI Rule: Always at bottom
+            const isShivaniA = a.students.some(s => s.name === 'S SHIVANI');
+            const isShivaniB = b.students.some(s => s.name === 'S SHIVANI');
+            
+            if (isShivaniA && !isShivaniB) return 1;
+            if (!isShivaniA && isShivaniB) return -1;
+
+             // Visibility Sorting: Active -> Hidden -> Archived
+            const visA = a.project.visibility || 'active';
+            const visB = b.project.visibility || 'active';
+            const priority = { active: 1, hidden: 2, archived: 3 };
+            
+            if (priority[visA] !== priority[visB]) {
+                return priority[visA] - priority[visB];
+            }
+
             const titleA = a.project.title;
             const titleB = b.project.title;
 
-            // Special ordering logic to keep Akhilesh U and Chaithanya together
-            // Swap 'Personal Portfolio Website' (Akhilesh) and 'Personal Resume Portfolio' (Samradh)
-            // so Akhilesh appears immediately before the 'Portfolio Website (Resume)' group.
+            // Special ordering logic to keep specific projects together
             if (titleA === 'Personal Portfolio Website' && titleB === 'Personal Resume Portfolio') return 1;
             if (titleA === 'Personal Resume Portfolio' && titleB === 'Personal Portfolio Website') return -1;
 
             const comparison = titleA.localeCompare(titleB);
             if (comparison !== 0) return comparison;
 
-            // Within identical titles (specifically 'Portfolio Website (Resume)'), place Chaithanya first
+            // Within identical titles, place specific students first based on name
             const isChaithanyaA = a.students.some(s => s.name === 'CHAITHANYA');
             const isChaithanyaB = b.students.some(s => s.name === 'CHAITHANYA');
             
