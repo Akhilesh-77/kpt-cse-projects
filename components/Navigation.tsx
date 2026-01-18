@@ -1,6 +1,5 @@
 import React from 'react';
-
-type Tab = 'home' | 'projects' | 'cohort-owners' | 'events' | 'credits';
+import { Tab } from '../types';
 
 interface NavigationProps {
     activeTab: Tab;
@@ -13,10 +12,11 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
     const inactiveClasses = "bg-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)]";
 
     return (
-        <nav className="bg-[var(--bg-secondary)] border-b-2 border-[var(--border-color)]">
+        <nav className="bg-[var(--bg-secondary)] border-b-2 border-[var(--border-color)] app-nav">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                     <button 
+                        id="nav-home"
                         onClick={() => onTabChange('home')}
                         className={`${navButtonClasses} ${activeTab === 'home' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'home'}
@@ -24,6 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
                         Home
                     </button>
                     <button 
+                        id="nav-projects"
                         onClick={() => onTabChange('projects')}
                         className={`${navButtonClasses} ${activeTab === 'projects' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'projects'}
@@ -38,6 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
                         CS DEPT
                     </button>
                     <button 
+                        id="nav-events"
                         onClick={() => onTabChange('events')}
                         className={`${navButtonClasses} ${activeTab === 'events' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'events'}
@@ -45,6 +47,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
                         Events
                     </button>
                     <button 
+                        id="nav-credits"
                         onClick={() => onTabChange('credits')}
                         className={`${navButtonClasses} ${activeTab === 'credits' ? activeClasses : inactiveClasses}`}
                         aria-pressed={activeTab === 'credits'}
