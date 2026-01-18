@@ -5,6 +5,34 @@ import { Student } from '../types';
 
 export const students: Student[] = [
     {
+        name: 'AMITH',
+        register_number: '103CS23005',
+        avatar: 'https://ik.imagekit.io/akhileshu/amith.png',
+        projects: [
+            {
+                title: 'Resume Portfolio Website',
+                description: 'A clean and elegant resume-style portfolio showcasing education, skills, personal info, and project highlights with a minimal UI layout.',
+                link: 'https://amith2.vercel.app/'
+            },
+            {
+                title: 'Lakshman Stall Grocery Website',
+                description: 'A small business grocery website designed for product display, category browsing, and local store branding with a simple, friendly interface.',
+                link: 'https://lakshmanstall.vercel.app/'
+            },
+            {
+                title: 'Full Stack Development Lab Manual Website & Lab Manual',
+                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
+                link: 'https://fullstack-labmanual.vercel.app/'
+            },
+            {
+                title: 'KPT Mangalore College Website',
+                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
+                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
+                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
+            }
+        ]
+    },
+    {
         name: 'AKHILESH U',
         register_number: '103CS23004',
         avatar: 'https://ik.imagekit.io/akhileshu/akhileshu.png',
@@ -41,34 +69,6 @@ export const students: Student[] = [
             },
             {
                 title: 'Karnataka (Govt.) Polytechnic Mangalore College Website 💎',
-                description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
-                link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
-                contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
-            }
-        ]
-    },
-    {
-        name: 'AMITH',
-        register_number: '103CS23005',
-        avatar: 'https://ik.imagekit.io/akhileshu/amith.png',
-        projects: [
-            {
-                title: 'Resume Portfolio Website',
-                description: 'A clean and elegant resume-style portfolio showcasing education, skills, personal info, and project highlights with a minimal UI layout.',
-                link: 'https://amith2.vercel.app/'
-            },
-            {
-                title: 'Lakshman Stall Grocery Website',
-                description: 'A small business grocery website designed for product display, category browsing, and local store branding with a simple, friendly interface.',
-                link: 'https://lakshmanstall.vercel.app/'
-            },
-            {
-                title: 'Full Stack Development Lab Manual Website & Lab Manual',
-                description: 'A complete Full Stack Development Lab Manual website with clean layout, easy navigation, and structured lab content.',
-                link: 'https://fullstack-labmanual.vercel.app/'
-            },
-            {
-                title: 'KPT Mangalore College Website',
                 description: 'An official informational website for Karnataka Govt. Polytechnic Mangalore, showcasing departments, academics, gallery, and student resources.',
                 link: 'https://gpt.karnataka.gov.in/kptmangalore/public/en',
                 contributor: 'Mrs. Leelavathi R, Selection Grade Lecturer, Computer Science and Engineering Department'
