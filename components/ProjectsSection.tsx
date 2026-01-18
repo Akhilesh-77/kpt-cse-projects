@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Student, Project } from '../types';
 import FloatingFacts from './FloatingFacts';
+import { technicalFacts } from '../data/facts';
 
 interface ProcessedProject {
     project: Project;
@@ -132,19 +133,6 @@ const ShareIcon = () => (
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students, onAddProjectClick }) => {
     const [filter, setFilter] = useState<'all' | 'single' | 'group'>('all');
-
-    const projectFacts = [
-        "All projects are displayed using responsive cards.",
-        "KPT projects are filtered automatically by keyword.",
-        "Each project has its own redirect confirmation.",
-        "Projects support individual sharing links.",
-        "Projects counter auto-updates based on total cards.",
-        "Each project can open an external live website.",
-        "Project images follow 16:9 ratio standards.",
-        "Projects can be grouped into categories.",
-        "KPT project pages have their own QR share.",
-        "This section is optimized for academic presentation."
-    ];
 
     const processedProjects = useMemo(() => {
         const projectMap = new Map<string, ProcessedProject>();
@@ -290,8 +278,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ students, onAddProjec
                 </div>
             )}
 
-            {/* Floating Facts for Projects Page - Above the Plus Button */}
-            <FloatingFacts facts={projectFacts} className="bottom-40 right-6" alignment="right" />
+            {/* Floating Facts - Unified Position */}
+            <FloatingFacts facts={technicalFacts} />
 
             <button
                 onClick={onAddProjectClick}
