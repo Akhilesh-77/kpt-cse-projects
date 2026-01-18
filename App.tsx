@@ -26,6 +26,7 @@ import QRCodeSection from './components/QRCodeSection';
 import FloatingFacts from './components/FloatingFacts';
 import RandomProjectPicker from './components/RandomProjectPicker';
 import SingleProjectModal from './components/SingleProjectModal';
+import ZiaGuide from './components/ZiaGuide';
 import { generateProjectSlug } from './utils';
 
 const App: React.FC = () => {
@@ -150,22 +151,31 @@ const App: React.FC = () => {
             );
         }
 
-        if (sortOption === 'latest-asc') {
-            const reversed = [...filtered].reverse();
-            return reversed;
-        }
+        return [...filtered].sort((a, b) => {
+            // Priority Check for S SHIVANI (Always Bottom)
+            const isShivaniA = a.name === 'S SHIVANI';
+            const isShivaniB = b.name === 'S SHIVANI';
 
-        if (sortOption === 'projects-desc') {
-            return [...filtered].sort((a, b) => {
+            if (isShivaniA && !isShivaniB) return 1; // A goes to bottom
+            if (!isShivaniA && isShivaniB) return -1; // B goes to bottom
+            if (isShivaniA && isShivaniB) return 0;
+
+            // Sorting Options
+            if (sortOption === 'latest-asc') {
+                // Descending index = Latest first
+                // Using students.indexOf since 'filtered' might be subset, but relative order in 'students' represents insertion time
+                const indexA = students.indexOf(a);
+                const indexB = students.indexOf(b);
+                return indexB - indexA; 
+            }
+
+            if (sortOption === 'projects-desc') {
                 const countA = new Set(a.projects.filter(p => p.link).map(p => p.link)).size;
                 const countB = new Set(b.projects.filter(p => p.link).map(p => p.link)).size;
                 return countB - countA;
-            });
-        }
+            }
 
-        const [sortBy, sortOrder] = sortOption.split('-');
-        
-        return [...filtered].sort((a, b) => {
+            const [sortBy, sortOrder] = sortOption.split('-');
             let comparison = 0;
             if (sortBy === 'name') {
                 comparison = a.name.localeCompare(b.name);
@@ -453,6 +463,7 @@ const App: React.FC = () => {
             
             <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
             <ScrollToTopButton />
+            <ZiaGuide />
             <input
                 type="file"
                 ref={fileInputRef}
