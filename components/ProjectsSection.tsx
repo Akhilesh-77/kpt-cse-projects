@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Student, Project } from '../types';
 import FloatingFacts from './FloatingFacts';
 import { technicalFacts } from '../data/facts';
+import { generateProjectSlug } from '../utils';
 
 interface ProcessedProject {
     project: Project;
@@ -69,13 +70,55 @@ const ProjectInfoCard: React.FC<{ processedProject: ProcessedProject; className?
         ...style
     } as React.CSSProperties;
 
+    const handleProjectShare = async (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Use the first student's name for the slug generation for consistency
+        const slug = generateProjectSlug(project.title, students[0].name);
+        const shareUrl = `${window.location.origin}/project/${slug}`;
+        const studentNames = students.map(s => s.name).join(', ');
+        
+        const shareData = {
+            title: project.title,
+            text: `Check out this project by ${studentNames} from the KPT CSE Portfolio!\n\n${project.description}`,
+            url: shareUrl,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.log('Share cancelled or failed', error);
+            }
+        } else {
+            try {
+                await navigator.clipboard.writeText(shareUrl);
+                alert('Project link copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+    };
+
     return (
         <div 
-            className={cardClasses}
+            className={`relative ${cardClasses}`}
             style={combinedStyle}
         >
+            {/* Share Icon - Absolute Top Right */}
+            <button
+                onClick={handleProjectShare}
+                className="absolute top-4 right-4 p-2 rounded-full bg-[var(--bg-tertiary)] text-[var(--text-secondary)] hover:bg-[var(--accent)] hover:text-white transition-all duration-300 shadow-sm z-10"
+                title="Share Project"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+            </button>
+
             <div>
-                <h4 className="text-xl font-bold text-[var(--accent)]">{project.title}</h4>
+                <h4 className="text-xl font-bold text-[var(--accent)] pr-8">{project.title}</h4>
                 {isGroupProject && (
                     <span className="inline-block bg-[var(--bg-tertiary)] text-[var(--accent)] text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full mt-2">
                         Group Project
