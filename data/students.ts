@@ -1323,7 +1323,7 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'SHIVANI',
+        name: 'S SHIVANI',
         register_number: '124CS23045',
         avatar: 'https://ik.imagekit.io/akhileshu/shivani.png',
         projects: [
