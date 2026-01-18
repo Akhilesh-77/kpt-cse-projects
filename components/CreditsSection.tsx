@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const creatorData = {
     name: 'Akhilesh U',
     details: [
-        '5th Semester',
-        'Third Year CSE',
+        'Sixth Semester',
+        'Final Year Computer Science & Engg.',
         'Karnataka (Govt.) Polytechnic Mangalore'
     ],
     image: 'https://i.postimg.cc/0Mm4fF5Y/akhilesh.jpg'
