@@ -22,6 +22,7 @@ import FacultyModal from './components/FacultyModal';
 import AddProjectModal from './components/AddProjectModal';
 import UserGuide from './components/UserGuide';
 import QRCodeSection from './components/QRCodeSection';
+import FloatingFacts from './components/FloatingFacts';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -46,6 +47,24 @@ const App: React.FC = () => {
     const [theme, setTheme] = useState<Theme>(() => {
         return (localStorage.getItem('theme') as Theme) || 'black';
     });
+
+    const homeFacts = [
+        "This website is built as a complete web application, not a static site.",
+        "Light and Dark themes are fully dynamic and user-controlled.",
+        "Every project card supports 16:9 real desktop screenshots.",
+        "Stories mode is inspired by Instagram-style experiences.",
+        "QR code sharing makes access faster for mobile users.",
+        "Each section of this website is individually shareable.",
+        "This portfolio is optimized for both mobile and desktop.",
+        "Project counters are auto-generated based on content.",
+        "KPT projects are separated using keyword intelligence.",
+        "This app uses animated onboarding for first-time users.",
+        "Paper tear animation is inspired by real paper texture.",
+        "All UI elements follow a card-based modern design.",
+        "This site supports persistent user preferences.",
+        "Every project can redirect to a live hosted website.",
+        "The entire platform is designed for academic showcasing."
+    ];
 
     useEffect(() => {
         document.documentElement.className = `theme-${theme}`;
@@ -321,6 +340,8 @@ const App: React.FC = () => {
                             </p>
                         </div>
                     )}
+                    {/* Floating Facts for Home Page - Bottom Left */}
+                    <FloatingFacts facts={homeFacts} className="bottom-6 left-6" alignment="left" />
                 </main>
             )}
 
