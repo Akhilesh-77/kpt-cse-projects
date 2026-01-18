@@ -70,15 +70,26 @@ const RandomProjectPicker: React.FC<RandomProjectPickerProps> = ({ students }) =
         setSelected(allProjects[randomIndex]);
     };
 
-    const handleVisitProfile = () => {
+    const handleVisitUserProfile = () => {
+        if (!selected) return;
+        const url = `/student/${selected.student.register_number}`;
+        window.history.pushState({ studentId: selected.student.register_number }, selected.student.name, url);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+        setIsOpen(false);
+    };
+
+    const handleVisitProjectProfile = () => {
         if (!selected) return;
         const slug = generateProjectSlug(selected.project.title, selected.student.name);
         const url = `/project/${slug}`;
-        
-        // Push state and dispatch popstate for App.tsx to catch the route change
         window.history.pushState(null, '', url);
         window.dispatchEvent(new PopStateEvent('popstate'));
-        
+        setIsOpen(false);
+    };
+
+    const handleVisitLiveWebsite = () => {
+        if (!selected || !selected.project.link) return;
+        window.open(selected.project.link, '_blank');
         setIsOpen(false);
     };
 
@@ -156,22 +167,38 @@ const RandomProjectPicker: React.FC<RandomProjectPickerProps> = ({ students }) =
 
                                         <div className="space-y-3">
                                             <button 
-                                                onClick={handleVisitProfile}
+                                                onClick={handleVisitUserProfile}
+                                                className="block w-full py-3 bg-[var(--bg-tertiary)] text-[var(--text-primary)] rounded-lg font-bold hover:bg-[var(--border-color)] transition-colors shadow-sm"
+                                            >
+                                                🔹 Visit User Profile
+                                            </button>
+                                            
+                                            <button 
+                                                onClick={handleVisitProjectProfile}
                                                 className="block w-full py-3 bg-[var(--accent)] text-white rounded-lg font-bold hover:bg-[var(--accent-hover)] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                                             >
-                                                Visit Project Profile
+                                                🔹 Visit Project Profile
                                             </button>
+                                            
+                                            <button 
+                                                onClick={handleVisitLiveWebsite}
+                                                className="block w-full py-2.5 border border-[var(--accent)] text-[var(--accent)] rounded-lg font-semibold hover:bg-[var(--accent)] hover:text-white transition-colors"
+                                            >
+                                                🌐 Visit Live Website
+                                            </button>
+
                                             <button 
                                                 onClick={startZiaProcess}
-                                                className="block w-full py-2.5 bg-[var(--bg-tertiary)] text-[var(--text-primary)] rounded-lg font-semibold hover:bg-[var(--border-color)] transition-colors"
+                                                className="block w-full py-2.5 bg-[var(--bg-tertiary)] text-[var(--text-primary)] rounded-lg font-semibold hover:bg-[var(--border-color)] transition-colors mt-2"
                                             >
-                                                Pick Another 🎲
+                                                🔁 Pick Another
                                             </button>
+                                            
                                             <button 
                                                 onClick={handleClose}
                                                 className="block w-full py-2 text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                                             >
-                                                Close
+                                                ❌ Close
                                             </button>
                                         </div>
                                     </div>
