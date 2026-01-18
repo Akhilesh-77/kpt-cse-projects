@@ -4,7 +4,7 @@ const creatorData = {
     name: 'Akhilesh U',
     details: [
         'Sixth Semester',
-        'Final Year Computer Science & Engg.',
+        'Final Year Computer Science and Engineering',
         'Karnataka (Govt.) Polytechnic Mangalore'
     ],
     image: 'https://i.postimg.cc/0Mm4fF5Y/akhilesh.jpg'
@@ -32,13 +32,37 @@ const CreatorCard: React.FC<{ creator: typeof creatorData; onClick: () => void }
         style={{ '--tw-shadow-color': 'var(--shadow-color)', boxShadow: '0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)' } as React.CSSProperties}
         title="Click to visit portfolio"
     >
-        <img src={creator.image} alt={`Profile of ${creator.name}`} className="w-32 h-32 rounded-full object-cover border-4 border-[var(--border-color)]" />
+        {/* Animated Profile Ring */}
+        <div className="relative group">
+            {/* The Rotating Gradient Ring */}
+            <div className="absolute -inset-[3px] rounded-full bg-gradient-to-tr from-yellow-400 via-orange-500 via-pink-500 to-purple-600 animate-spin-slow"></div>
+            
+            {/* The Image Container (Creates the gap between ring and image) */}
+            <div className="relative bg-[var(--bg-secondary)] rounded-full p-1">
+                <img 
+                    src={creator.image} 
+                    alt={`Profile of ${creator.name}`} 
+                    className="w-32 h-32 rounded-full object-cover" 
+                />
+            </div>
+        </div>
+
         <div>
             <h3 className="text-2xl font-bold text-[var(--text-primary)]">{creator.name}</h3>
             {creator.details.map((detail, index) => (
                  <p key={index} className="text-md text-[var(--text-secondary)] mt-2">{detail}</p>
             ))}
         </div>
+        
+        <style>{`
+            @keyframes spin-slow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            .animate-spin-slow {
+                animation: spin-slow 4s linear infinite;
+            }
+        `}</style>
     </div>
 );
 
