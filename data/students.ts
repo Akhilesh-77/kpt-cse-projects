@@ -1323,18 +1323,6 @@ export const students: Student[] = [
         ]
     },
     {
-        name: 'S SHIVANI',
-        register_number: '124CS23045',
-        avatar: 'https://ik.imagekit.io/akhileshu/shivani.png',
-        projects: [
-            {
-                title: 'Portfolio Website (Resume)',
-                description: 'A simple responsive portfolio showing academic details, skills, and personal profile.',
-                link: 'https://shivani01-portfolio.netlify.app/'
-            }
-        ]
-    },
-    {
         name: 'SHUSHANTH K',
         register_number: '103CS23048',
         avatar: 'https://ik.imagekit.io/akhileshu/Screenshot%202026-01-17%20133538.png',
